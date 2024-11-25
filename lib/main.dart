@@ -1,4 +1,5 @@
 import 'package:finance_wallet_app_clone/constant/app_routes.dart';
+import 'package:finance_wallet_app_clone/features/splash/pages/app_lunch_page.dart';
 import 'package:finance_wallet_app_clone/features/splash/pages/splash_page.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       routes: AppRoute.instance.routes,
-      initialRoute: SplashScreen.splashScreen,
+      initialRoute: LunchScreen.lunchScreen,
     );
   }
 }

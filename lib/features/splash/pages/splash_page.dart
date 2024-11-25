@@ -10,8 +10,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
-  static const String splashScreen = '/SplashScreen';
-
+  static const String splashScreen = '/';
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +22,7 @@ class SplashScreen extends StatelessWidget {
           body: Container(
             height: size.height,
             width: size.width,
-            decoration: BoxDecoration(color: AppColors.darkGreen),
+            decoration: BoxDecoration(color: AppColors.caribbeanGreen),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,

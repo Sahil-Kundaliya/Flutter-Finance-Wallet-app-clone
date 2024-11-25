@@ -19,12 +19,16 @@ class AppColors {
   static const limeColor = Colors.lime;
 
   // theme colors
-  static Color darkGreen = const Color(0xFF00D09E);
+  static Color caribbeanGreen = const Color(0xFF00D09E);
   static Color lightGreen = const Color(0xFFDFF7E2);
+  static Color honeydew = const Color(0xFFF1FFF3);
+  static Color cyprus = const Color(0xFF0E3E3E);
+  static Color primaryText = const Color(0xFF4B4544);
+  static Color lettersAndIcons = const Color(0xFF093030);
+
   static Color secondary = const Color(0xFF39D2C0);
   static Color tertiary = const Color(0xFFADFFBE);
   static Color alternate = const Color(0xFFE0E3E7);
-  static Color primaryText = const Color(0xFF14181b);
   static Color secondaryText = const Color(0xFF57636c);
   static Color primaryBackground = const Color(0xFFF1F4F8);
   static Color secondaryBackground = const Color(0xFFFFFFFF);
