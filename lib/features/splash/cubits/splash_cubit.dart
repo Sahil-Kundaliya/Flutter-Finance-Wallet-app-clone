@@ -9,7 +9,18 @@ class SplashCubit extends Cubit<SplashState> {
     // navigationToNextPage(context: context);
   }
 
+  int onBoardingIndex = 0;
+
+  changeOnBoardingIndex({required nextIndex}) {
+    onBoardingIndex = nextIndex;
+    updateState();
+  }
+
   void navigationToNextPage({required BuildContext context}) {
     Navigator.pushReplacementNamed(context, LunchScreen.lunchScreen);
+  }
+
+  updateState() {
+    emit(SplashUpdateState());
   }
 }

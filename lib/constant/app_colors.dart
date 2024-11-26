@@ -22,7 +22,12 @@ class AppColors {
   static Color caribbeanGreen = const Color(0xFF00D09E);
   static Color lightGreen = const Color(0xFFDFF7E2);
   static Color honeydew = const Color(0xFFF1FFF3);
+  static Color voidColor = const Color(0xFF031314);
+  static Color fenceGreen = const Color(0xFF052224);
   static Color cyprus = const Color(0xFF0E3E3E);
+  static Color oceanBlue = const Color(0xFF0068FF);
+  static Color vividBlue = const Color(0xFF3299FF);
+  static Color lightBlue = const Color(0xFF6DB6FE);
   static Color primaryText = const Color(0xFF4B4544);
   static Color lettersAndIcons = const Color(0xFF093030);
 

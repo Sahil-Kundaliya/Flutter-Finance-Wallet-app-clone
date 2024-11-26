@@ -15,36 +15,33 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
-    return BlocProvider(
-      create: (context) => SplashCubit(),
-      child: BlocBuilder<SplashCubit, SplashState>(builder: (context, state) {
-        return Scaffold(
-          body: Container(
-            height: size.height,
-            width: size.width,
-            decoration: BoxDecoration(color: AppColors.caribbeanGreen),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  height: 110,
-                  width: 110,
-                  decoration: const BoxDecoration(),
-                  child: SvgPicture.asset(
-                    AppImages.splashVector,
-                  ),
+    return BlocBuilder<SplashCubit, SplashState>(builder: (context, state) {
+      return Scaffold(
+        body: Container(
+          height: size.height,
+          width: size.width,
+          decoration: BoxDecoration(color: AppColors.caribbeanGreen),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                height: 110,
+                width: 110,
+                decoration: const BoxDecoration(),
+                child: SvgPicture.asset(
+                  AppImages.splashVector,
                 ),
-                Text(
-                  'FinWise',
-                  style: AppTextStyles.semiBold(
-                      fontSize: 52.14, color: AppColors.whiteColor),
-                )
-              ],
-            ),
+              ),
+              Text(
+                'FinWise',
+                style: AppTextStyles.semiBold(
+                    fontSize: 52.14, color: AppColors.whiteColor),
+              )
+            ],
           ),
-        );
-      }),
-    );
+        ),
+      );
+    });
   }
 }

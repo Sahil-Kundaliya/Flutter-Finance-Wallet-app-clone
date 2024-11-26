@@ -1,4 +1,5 @@
- abstract class SplashState {}
+abstract class SplashState {}
 
- class SplashInitialState extends SplashState {}
- class SplashUpdateState extends SplashState {}
+class SplashInitialState extends SplashState {}
+
+class SplashUpdateState extends SplashState {}
