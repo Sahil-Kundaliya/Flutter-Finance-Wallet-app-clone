@@ -1,4 +1,5 @@
 import 'package:finance_wallet_app_clone/constant/app_routes.dart';
+import 'package:finance_wallet_app_clone/features/auth/pages/sign_in_page.dart';
 import 'package:finance_wallet_app_clone/features/splash/cubits/splash_cubit.dart';
 import 'package:finance_wallet_app_clone/features/splash/pages/on_boarding_page.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         routes: AppRoute.instance.routes,
-        initialRoute: OnBoardingScreen.onBoardingScreen,
+        initialRoute: SignInPage.signInPage,
       ),
     );
   }
