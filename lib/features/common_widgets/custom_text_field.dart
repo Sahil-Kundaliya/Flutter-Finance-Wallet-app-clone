@@ -15,7 +15,6 @@ class CustomTextField extends StatelessWidget {
     this.iconColor1,
     this.iconColor2,
     this.icons1Click,
-    this.icons2Click,
     this.hideText = false,
   });
 
@@ -24,7 +23,7 @@ class CustomTextField extends StatelessWidget {
   String title, textFieldHintText;
   IconData? icon1, icon2;
   Color? iconColor1, iconColor2;
-  Function? icons1Click, icons2Click;
+  VoidCallback? icons1Click;
   bool? hideText;
 
   @override
@@ -67,9 +66,7 @@ class CustomTextField extends StatelessWidget {
                   ),
                   suffixIcon: icon1 != null && icon2 != null
                       ? GestureDetector(
-                          onTap: () {
-                            (hideText ?? false) ? icons1Click : icons2Click;
-                          },
+                          onTap: icons1Click,
                           child: Icon(
                             (hideText ?? false) ? icon1 : icon2,
                             // Replace with any icon

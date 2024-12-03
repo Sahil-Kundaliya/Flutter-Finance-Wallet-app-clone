@@ -1,4 +1,5 @@
 import 'package:finance_wallet_app_clone/constant/app_routes.dart';
+import 'package:finance_wallet_app_clone/features/auth/cubits/auth_cubit.dart';
 import 'package:finance_wallet_app_clone/features/auth/pages/sign_in_page.dart';
 import 'package:finance_wallet_app_clone/features/splash/cubits/splash_cubit.dart';
 import 'package:finance_wallet_app_clone/features/splash/pages/on_boarding_page.dart';
@@ -19,7 +20,10 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider<SplashCubit>(
           create: (context) => SplashCubit(),
-        )
+        ),
+        BlocProvider<AuthCubit>(
+          create: (context) => AuthCubit(),
+        ),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
