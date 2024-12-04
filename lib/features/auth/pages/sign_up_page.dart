@@ -1,5 +1,4 @@
 import 'package:finance_wallet_app_clone/constant/app_colors.dart';
-import 'package:finance_wallet_app_clone/constant/app_images.dart';
 import 'package:finance_wallet_app_clone/constant/app_text_styles.dart';
 import 'package:finance_wallet_app_clone/features/auth/cubits/auth_cubit.dart';
 import 'package:finance_wallet_app_clone/features/auth/cubits/auth_state.dart';
@@ -48,7 +47,7 @@ class SignUpPage extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 25),
                   child: Column(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Expanded(
@@ -102,8 +101,10 @@ class SignUpPage extends StatelessWidget {
                                   icon1: Icons.remove_red_eye,
                                   icon2: Icons.panorama_fish_eye,
                                   hideText: authProvider.signUpPasswordView,
-                                  icons1Click: authProvider
-                                      .changeSignInPasswordView(index: 1),
+                                  icons1Click: () {
+                                    authProvider.changeSignInPasswordView(
+                                        index: 1);
+                                  },
                                 ),
                               ),
                               Padding(
@@ -117,8 +118,10 @@ class SignUpPage extends StatelessWidget {
                                   icon2: Icons.panorama_fish_eye,
                                   hideText:
                                       authProvider.signUpConfirmPasswordView,
-                                  icons1Click: authProvider
-                                      .changeSignInPasswordView(index: 2),
+                                  icons1Click: () {
+                                    authProvider.changeSignInPasswordView(
+                                        index: 2);
+                                  },
                                 ),
                               ),
                               Padding(

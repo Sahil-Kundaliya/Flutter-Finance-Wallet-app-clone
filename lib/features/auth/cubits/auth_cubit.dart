@@ -9,9 +9,12 @@ class AuthCubit extends Cubit<AuthState> {
   bool signUpPasswordView = false;
   bool signUpConfirmPasswordView = false;
 
+  //sign in
   final TextEditingController signInEmailController = TextEditingController();
   final TextEditingController signInPasswordController =
       TextEditingController();
+
+  //sign up
   final TextEditingController signUpEmailController = TextEditingController();
   final TextEditingController signUpNameController = TextEditingController();
   final TextEditingController signUpNumberController = TextEditingController();
@@ -20,6 +23,9 @@ class AuthCubit extends Cubit<AuthState> {
       TextEditingController();
   final TextEditingController signUpPasswordController =
       TextEditingController();
+
+  // forgot password
+  final TextEditingController forgotEmailController = TextEditingController();
 
   changeSignInPasswordView({required int index}) {
     switch (index) {

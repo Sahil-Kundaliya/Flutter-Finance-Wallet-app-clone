@@ -3,6 +3,7 @@ import 'package:finance_wallet_app_clone/constant/app_images.dart';
 import 'package:finance_wallet_app_clone/constant/app_text_styles.dart';
 import 'package:finance_wallet_app_clone/features/auth/cubits/auth_cubit.dart';
 import 'package:finance_wallet_app_clone/features/auth/cubits/auth_state.dart';
+import 'package:finance_wallet_app_clone/features/auth/pages/forgot_password_page.dart';
 import 'package:finance_wallet_app_clone/features/auth/pages/sign_up_page.dart';
 import 'package:finance_wallet_app_clone/features/common_widgets/custom_text_field.dart';
 import 'package:flutter/gestures.dart';
@@ -68,7 +69,7 @@ class SignInPage extends StatelessWidget {
                           icon1: Icons.remove_red_eye,
                           icon2: Icons.panorama_fish_eye,
                           hideText: authProvider.signInPasswordView,
-                          icons1Click:
+                          icons1Click: () =>
                               authProvider.changeSignInPasswordView(index: 0),
                         ),
                       ),
@@ -97,10 +98,15 @@ class SignInPage extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 8),
                         child: Align(
                           alignment: Alignment.center,
-                          child: Text(
-                            'Forgot Password?',
-                            style: AppTextStyles.semiBold(
-                                fontSize: 14, color: AppColors.lettersAndIcons),
+                          child: GestureDetector(
+                            onTap: () => Navigator.pushNamed(
+                                context, ForgotPasswordPage.forgotPasswordPage),
+                            child: Text(
+                              'Forgot Password?',
+                              style: AppTextStyles.semiBold(
+                                  fontSize: 14,
+                                  color: AppColors.lettersAndIcons),
+                            ),
                           ),
                         ),
                       ),
