@@ -3,6 +3,7 @@ import 'package:finance_wallet_app_clone/constant/app_images.dart';
 import 'package:finance_wallet_app_clone/constant/app_text_styles.dart';
 import 'package:finance_wallet_app_clone/features/auth/cubits/auth_cubit.dart';
 import 'package:finance_wallet_app_clone/features/auth/cubits/auth_state.dart';
+import 'package:finance_wallet_app_clone/features/auth/pages/new_password_page.dart';
 import 'package:finance_wallet_app_clone/features/auth/pages/sign_up_page.dart';
 import 'package:finance_wallet_app_clone/features/auth/widgets/custom_pin_input.dart';
 import 'package:flutter/gestures.dart';
@@ -78,18 +79,22 @@ class SecurityPinPage extends StatelessWidget {
                           padding: const EdgeInsets.only(top: 55),
                           child: Align(
                             alignment: Alignment.center,
-                            child: Container(
-                              height: 40,
-                              width: 207,
-                              decoration: BoxDecoration(
-                                  color: AppColors.caribbeanGreen,
-                                  borderRadius: BorderRadius.circular(30)),
-                              child: Center(
-                                child: Text(
-                                  'Accept',
-                                  style: AppTextStyles.semiBold(
-                                      fontSize: 20,
-                                      color: AppColors.lettersAndIcons),
+                            child: GestureDetector(
+                              onTap: () => Navigator.pushNamed(
+                                  context, NewPasswordPage.newPasswordPage),
+                              child: Container(
+                                height: 40,
+                                width: 207,
+                                decoration: BoxDecoration(
+                                    color: AppColors.caribbeanGreen,
+                                    borderRadius: BorderRadius.circular(30)),
+                                child: Center(
+                                  child: Text(
+                                    'Accept',
+                                    style: AppTextStyles.semiBold(
+                                        fontSize: 20,
+                                        color: AppColors.lettersAndIcons),
+                                  ),
                                 ),
                               ),
                             ),
@@ -99,18 +104,22 @@ class SecurityPinPage extends StatelessWidget {
                           padding: const EdgeInsets.only(top: 40),
                           child: Align(
                             alignment: Alignment.center,
-                            child: Container(
-                              height: 45,
-                              width: 207,
-                              decoration: BoxDecoration(
-                                  color: AppColors.lightGreen,
-                                  borderRadius: BorderRadius.circular(30)),
-                              child: Center(
-                                child: Text(
-                                  'Send Again',
-                                  style: AppTextStyles.semiBold(
-                                      fontSize: 20,
-                                      color: AppColors.lettersAndIcons),
+                            child: GestureDetector(
+                              onTap: () => Navigator.pushNamed(
+                                  context, NewPasswordPage.newPasswordPage),
+                              child: Container(
+                                height: 45,
+                                width: 207,
+                                decoration: BoxDecoration(
+                                    color: AppColors.lightGreen,
+                                    borderRadius: BorderRadius.circular(30)),
+                                child: Center(
+                                  child: Text(
+                                    'Send Again',
+                                    style: AppTextStyles.semiBold(
+                                        fontSize: 20,
+                                        color: AppColors.lettersAndIcons),
+                                  ),
                                 ),
                               ),
                             ),

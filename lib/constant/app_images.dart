@@ -8,4 +8,7 @@ class AppImages {
   // auth
   static const String authGoogle = 'assets/images/Google.png';
   static const String authFacebook = 'assets/images/Facebook.png';
+  static const String authDoneIcon = 'assets/images/auth_done_icon.png';
+  static const String authUndoneIcon = 'assets/images/auth_undone_icon.png';
+  static const String fingerprintIcon = 'assets/images/fingerprint_icon.png';
 }

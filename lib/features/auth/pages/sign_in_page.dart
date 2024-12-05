@@ -3,6 +3,7 @@ import 'package:finance_wallet_app_clone/constant/app_images.dart';
 import 'package:finance_wallet_app_clone/constant/app_text_styles.dart';
 import 'package:finance_wallet_app_clone/features/auth/cubits/auth_cubit.dart';
 import 'package:finance_wallet_app_clone/features/auth/cubits/auth_state.dart';
+import 'package:finance_wallet_app_clone/features/auth/pages/fingerprint_page.dart';
 import 'package:finance_wallet_app_clone/features/auth/pages/forgot_password_page.dart';
 import 'package:finance_wallet_app_clone/features/auth/pages/sign_up_page.dart';
 import 'package:finance_wallet_app_clone/features/common_widgets/custom_text_field.dart';
@@ -77,18 +78,22 @@ class SignInPage extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 55),
                         child: Align(
                           alignment: Alignment.center,
-                          child: Container(
-                            height: 45,
-                            width: 207,
-                            decoration: BoxDecoration(
-                                color: AppColors.caribbeanGreen,
-                                borderRadius: BorderRadius.circular(30)),
-                            child: Center(
-                              child: Text(
-                                'Log In',
-                                style: AppTextStyles.semiBold(
-                                    fontSize: 20,
-                                    color: AppColors.lettersAndIcons),
+                          child: GestureDetector(
+                            onTap: () => Navigator.pushNamed(
+                                context, FingerprintPage.fingerprintPage),
+                            child: Container(
+                              height: 45,
+                              width: 207,
+                              decoration: BoxDecoration(
+                                  color: AppColors.caribbeanGreen,
+                                  borderRadius: BorderRadius.circular(30)),
+                              child: Center(
+                                child: Text(
+                                  'Log In',
+                                  style: AppTextStyles.semiBold(
+                                      fontSize: 20,
+                                      color: AppColors.lettersAndIcons),
+                                ),
                               ),
                             ),
                           ),
@@ -114,18 +119,22 @@ class SignInPage extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 10),
                         child: Align(
                           alignment: Alignment.center,
-                          child: Container(
-                            height: 45,
-                            width: 207,
-                            decoration: BoxDecoration(
-                                color: AppColors.lightGreen,
-                                borderRadius: BorderRadius.circular(30)),
-                            child: Center(
-                              child: Text(
-                                'Sign Up',
-                                style: AppTextStyles.semiBold(
-                                    fontSize: 20,
-                                    color: AppColors.lettersAndIcons),
+                          child: GestureDetector(
+                            onTap: () => Navigator.pushReplacementNamed(
+                                context, SignUpPage.signUpPage),
+                            child: Container(
+                              height: 45,
+                              width: 207,
+                              decoration: BoxDecoration(
+                                  color: AppColors.lightGreen,
+                                  borderRadius: BorderRadius.circular(30)),
+                              child: Center(
+                                child: Text(
+                                  'Sign Up',
+                                  style: AppTextStyles.semiBold(
+                                      fontSize: 20,
+                                      color: AppColors.lettersAndIcons),
+                                ),
                               ),
                             ),
                           ),

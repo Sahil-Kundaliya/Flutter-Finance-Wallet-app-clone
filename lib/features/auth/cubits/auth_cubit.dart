@@ -8,6 +8,8 @@ class AuthCubit extends Cubit<AuthState> {
   bool signInPasswordView = false;
   bool signUpPasswordView = false;
   bool signUpConfirmPasswordView = false;
+  bool newPasswordView = false;
+  bool newConfirmPasswordView = false;
 
   //sign in
   final TextEditingController signInEmailController = TextEditingController();
@@ -27,9 +29,14 @@ class AuthCubit extends Cubit<AuthState> {
   // forgot password
   final TextEditingController forgotEmailController = TextEditingController();
 
+  // new passwords
+  final TextEditingController newPasswordController = TextEditingController();
+  final TextEditingController newConfirmPasswordController =
+      TextEditingController();
+
   changeSignInPasswordView({required int index}) {
     switch (index) {
-      //0 for sign in 1 for sign up and 2 is for confirm password
+      //0 for signIn, 1 for signUp, 2 for confirm password, 3 for newPassword, 4 for newConfirmPassword
       case 0:
         signInPasswordView = !signInPasswordView;
         break;
@@ -39,8 +46,18 @@ class AuthCubit extends Cubit<AuthState> {
       case 2:
         signUpConfirmPasswordView = !signUpConfirmPasswordView;
         break;
+      case 3:
+        newPasswordView = !newPasswordView;
+        break;
+      case 4:
+        newConfirmPasswordView = !newConfirmPasswordView;
+        break;
     }
     updateState();
+  }
+
+  void navigateToFingerprint() {
+    emit(NavigateToFingerprintState());
   }
 
   updateState() {

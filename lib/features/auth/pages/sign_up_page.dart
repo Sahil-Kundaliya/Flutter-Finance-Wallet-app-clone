@@ -2,6 +2,7 @@ import 'package:finance_wallet_app_clone/constant/app_colors.dart';
 import 'package:finance_wallet_app_clone/constant/app_text_styles.dart';
 import 'package:finance_wallet_app_clone/features/auth/cubits/auth_cubit.dart';
 import 'package:finance_wallet_app_clone/features/auth/cubits/auth_state.dart';
+import 'package:finance_wallet_app_clone/features/auth/pages/fingerprint_page.dart';
 import 'package:finance_wallet_app_clone/features/auth/pages/sign_in_page.dart';
 import 'package:finance_wallet_app_clone/features/common_widgets/custom_text_field.dart';
 import 'package:flutter/gestures.dart';
@@ -141,19 +142,23 @@ class SignUpPage extends StatelessWidget {
                                 padding: const EdgeInsets.only(top: 10),
                                 child: Align(
                                   alignment: Alignment.center,
-                                  child: Container(
-                                    height: 45,
-                                    width: 207,
-                                    decoration: BoxDecoration(
-                                        color: AppColors.caribbeanGreen,
-                                        borderRadius:
-                                            BorderRadius.circular(30)),
-                                    child: Center(
-                                      child: Text(
-                                        'Sign Up',
-                                        style: AppTextStyles.semiBold(
-                                            fontSize: 20,
-                                            color: AppColors.lettersAndIcons),
+                                  child: GestureDetector(
+                                    onTap: () => Navigator.pushNamed(context,
+                                        FingerprintPage.fingerprintPage),
+                                    child: Container(
+                                      height: 45,
+                                      width: 207,
+                                      decoration: BoxDecoration(
+                                          color: AppColors.caribbeanGreen,
+                                          borderRadius:
+                                              BorderRadius.circular(30)),
+                                      child: Center(
+                                        child: Text(
+                                          'Sign Up',
+                                          style: AppTextStyles.semiBold(
+                                              fontSize: 20,
+                                              color: AppColors.lettersAndIcons),
+                                        ),
                                       ),
                                     ),
                                   ),

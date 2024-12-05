@@ -105,18 +105,22 @@ class ForgotPasswordPage extends StatelessWidget {
                           padding: const EdgeInsets.only(top: 40),
                           child: Align(
                             alignment: Alignment.center,
-                            child: Container(
-                              height: 45,
-                              width: 207,
-                              decoration: BoxDecoration(
-                                  color: AppColors.lightGreen,
-                                  borderRadius: BorderRadius.circular(30)),
-                              child: Center(
-                                child: Text(
-                                  'Sign Up',
-                                  style: AppTextStyles.semiBold(
-                                      fontSize: 20,
-                                      color: AppColors.lettersAndIcons),
+                            child: GestureDetector(
+                              onTap: () => Navigator.pushReplacementNamed(
+                                  context, SignUpPage.signUpPage),
+                              child: Container(
+                                height: 45,
+                                width: 207,
+                                decoration: BoxDecoration(
+                                    color: AppColors.lightGreen,
+                                    borderRadius: BorderRadius.circular(30)),
+                                child: Center(
+                                  child: Text(
+                                    'Sign Up',
+                                    style: AppTextStyles.semiBold(
+                                        fontSize: 20,
+                                        color: AppColors.lettersAndIcons),
+                                  ),
                                 ),
                               ),
                             ),
