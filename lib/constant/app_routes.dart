@@ -5,7 +5,7 @@ import 'package:finance_wallet_app_clone/features/auth/pages/password_status_pag
 import 'package:finance_wallet_app_clone/features/auth/pages/security_pin_page.dart';
 import 'package:finance_wallet_app_clone/features/auth/pages/sign_in_page.dart';
 import 'package:finance_wallet_app_clone/features/auth/pages/sign_up_page.dart';
-import 'package:finance_wallet_app_clone/features/home/pages/home_page.dart';
+import 'package:finance_wallet_app_clone/features/main/pages/main_page.dart';
 import 'package:finance_wallet_app_clone/features/splash/pages/app_lunch_page.dart';
 import 'package:finance_wallet_app_clone/features/splash/pages/on_boarding_page.dart';
 import 'package:finance_wallet_app_clone/features/splash/pages/splash_page.dart';
@@ -32,7 +32,7 @@ class AppRoute {
     PasswordStatusPage.passwordStatusPage: (context) =>
         const PasswordStatusPage(),
 
-    //home
-    HomePage.homePage: (context) => const HomePage(),
+    //Main
+    MainScreen.mainScreen: (context) => const MainScreen(),
   };
 }

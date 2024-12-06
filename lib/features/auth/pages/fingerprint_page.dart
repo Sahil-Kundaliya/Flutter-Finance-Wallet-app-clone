@@ -3,7 +3,7 @@ import 'package:finance_wallet_app_clone/constant/app_images.dart';
 import 'package:finance_wallet_app_clone/constant/app_text_styles.dart';
 import 'package:finance_wallet_app_clone/features/auth/cubits/auth_cubit.dart';
 import 'package:finance_wallet_app_clone/features/auth/cubits/auth_state.dart';
-import 'package:finance_wallet_app_clone/features/home/pages/home_page.dart';
+import 'package:finance_wallet_app_clone/features/main/pages/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -83,7 +83,7 @@ class FingerprintPage extends StatelessWidget {
                             child: GestureDetector(
                               onTap: () {
                                 Navigator.pushNamedAndRemoveUntil(context,
-                                    HomePage.homePage, (route) => false);
+                                    MainScreen.mainScreen, (route) => false);
                               },
                               child: Container(
                                 height: 40,

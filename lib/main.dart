@@ -1,6 +1,8 @@
 import 'package:finance_wallet_app_clone/constant/app_routes.dart';
 import 'package:finance_wallet_app_clone/features/auth/cubits/auth_cubit.dart';
 import 'package:finance_wallet_app_clone/features/auth/pages/sign_in_page.dart';
+import 'package:finance_wallet_app_clone/features/main/cubits/main_cubit.dart';
+import 'package:finance_wallet_app_clone/features/main/pages/main_page.dart';
 import 'package:finance_wallet_app_clone/features/splash/cubits/splash_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,6 +25,9 @@ class MyApp extends StatelessWidget {
         BlocProvider<AuthCubit>(
           create: (context) => AuthCubit(),
         ),
+        BlocProvider<MainCubit>(
+          create: (context) => MainCubit(),
+        ),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
@@ -31,7 +36,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         routes: AppRoute.instance.routes,
-        initialRoute: SignInPage.signInPage,
+        initialRoute: MainScreen.mainScreen,
       ),
     );
   }
