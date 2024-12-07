@@ -1,6 +1,5 @@
 import 'package:finance_wallet_app_clone/constant/app_routes.dart';
 import 'package:finance_wallet_app_clone/features/auth/cubits/auth_cubit.dart';
-import 'package:finance_wallet_app_clone/features/auth/pages/sign_in_page.dart';
 import 'package:finance_wallet_app_clone/features/main/cubits/main_cubit.dart';
 import 'package:finance_wallet_app_clone/features/main/pages/main_page.dart';
 import 'package:finance_wallet_app_clone/features/splash/cubits/splash_cubit.dart';

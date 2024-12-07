@@ -52,11 +52,15 @@ class HomePage extends StatelessWidget {
                                       color: AppColors.fenceGreen)),
                             ],
                           ),
-                          CircleAvatar(
-                              radius: 15,
-                              backgroundColor: AppColors.lightGreen,
-                              child: const Icon(Icons.notifications_none,
-                                  size: 20))
+                          GestureDetector(
+                            onTap: () =>
+                                mainProvider.changeHomePageSubIndex(index: 1),
+                            child: CircleAvatar(
+                                radius: 15,
+                                backgroundColor: AppColors.lightGreen,
+                                child: const Icon(Icons.notifications_none,
+                                    size: 20)),
+                          )
                         ],
                       ),
                       Padding(

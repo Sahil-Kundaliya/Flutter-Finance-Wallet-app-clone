@@ -38,7 +38,8 @@ class MainScreen extends StatelessWidget {
                     width: 54,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(22),
-                        color: mainProvider.mainPageIndex == 0
+                        color: mainProvider.mainPageIndex == 0 &&
+                                mainProvider.homePageSubIndex == 0
                             ? AppColors.caribbeanGreen
                             : AppColors.transparentColor),
                     child: Padding(
