@@ -1,14 +1,11 @@
 import 'package:finance_wallet_app_clone/constant/app_colors.dart';
-import 'package:finance_wallet_app_clone/constant/app_images.dart';
 import 'package:finance_wallet_app_clone/constant/app_text_styles.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/models/notification_model.dart';
-import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/widgets/money_percentage_progressbar.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/widgets/notification_widget.dart';
 import 'package:finance_wallet_app_clone/features/main/cubits/main_cubit.dart';
 import 'package:finance_wallet_app_clone/features/main/cubits/main_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({super.key});
@@ -16,10 +13,8 @@ class NotificationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
-
     return BlocBuilder<MainCubit, MainState>(builder: (context, state) {
       final mainProvider = context.read<MainCubit>();
-
       return Container(
         height: size.height,
         width: size.width,

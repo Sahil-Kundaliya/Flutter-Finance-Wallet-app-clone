@@ -28,8 +28,9 @@ class HomePage extends StatelessWidget {
           color: AppColors.caribbeanGreen,
           child: Column(
             children: [
-              Container(
-                // height: size.height * 0.21,
+              GestureDetector(
+                onTap: () => mainProvider.changeHomePageSubIndex(index: 2),
+                behavior: HitTestBehavior.opaque,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
                       vertical: 20.0, horizontal: 20),
@@ -155,100 +156,114 @@ class HomePage extends StatelessWidget {
                         const EdgeInsets.only(left: 20, right: 20, top: 35),
                     child: Column(
                       children: [
-                        Container(
-                          width: size.width,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(31),
-                              color: AppColors.caribbeanGreen),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 12, vertical: 20),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Column(
-                                  children: [
-                                    CircularProgressBar(),
-                                    Text('Savings\non goals',
-                                        textAlign: TextAlign.center,
-                                        style: AppTextStyles.medium(
-                                            fontSize: 12,
-                                            color: AppColors.lettersAndIcons))
-                                  ],
-                                ),
-                                Container(
-                                    height: 108,
-                                    width: 1.8,
-                                    color: AppColors.honeydew),
-                                Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Image.asset(AppImages.salaryIcon),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 8.0),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text('Revenue Last Week',
-                                                  style: AppTextStyles.regular(
-                                                      fontSize: 12,
-                                                      color: AppColors
-                                                          .fenceGreen)),
-                                              Text('\$4.000.00',
-                                                  style: AppTextStyles.bold(
-                                                      fontSize: 15,
-                                                      color: AppColors
-                                                          .fenceGreen)),
-                                            ],
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                    Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 8),
-                                        child: Container(
-                                            height: 1.8,
-                                            width: 161,
-                                            color: AppColors.honeydew)),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Image.asset(AppImages.foodIcon),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 8.0),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text('Food Last Week',
-                                                  style: AppTextStyles.regular(
-                                                      fontSize: 12,
-                                                      color: AppColors
-                                                          .fenceGreen)),
-                                              Text('-\$100.00',
-                                                  style: AppTextStyles.bold(
-                                                      fontSize: 15,
-                                                      color:
-                                                          AppColors.oceanBlue)),
-                                            ],
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                  ],
-                                )
-                              ],
+                        GestureDetector(
+                          onTap: () =>
+                              mainProvider.changeHomePageSubIndex(index: 3),
+                          behavior: HitTestBehavior.opaque,
+                          child: Container(
+                            width: size.width,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(31),
+                                color: AppColors.caribbeanGreen),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 12, vertical: 20),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Column(
+                                    children: [
+                                      CircularProgressBar(),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(top: 4.0),
+                                        child: Text('Savings\non goals',
+                                            textAlign: TextAlign.center,
+                                            style: AppTextStyles.medium(
+                                                fontSize: 12,
+                                                color:
+                                                    AppColors.lettersAndIcons)),
+                                      )
+                                    ],
+                                  ),
+                                  Container(
+                                      height: 108,
+                                      width: 1.8,
+                                      color: AppColors.honeydew),
+                                  Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: [
+                                          Image.asset(AppImages.salaryIcon),
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                left: 8.0),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text('Revenue Last Week',
+                                                    style:
+                                                        AppTextStyles.regular(
+                                                            fontSize: 12,
+                                                            color: AppColors
+                                                                .fenceGreen)),
+                                                Text('\$4.000.00',
+                                                    style: AppTextStyles.bold(
+                                                        fontSize: 15,
+                                                        color: AppColors
+                                                            .fenceGreen)),
+                                              ],
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                      Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              vertical: 8),
+                                          child: Container(
+                                              height: 1.8,
+                                              width: 161,
+                                              color: AppColors.honeydew)),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: [
+                                          Image.asset(AppImages.foodIcon),
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                left: 8.0),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text('Food Last Week',
+                                                    style:
+                                                        AppTextStyles.regular(
+                                                            fontSize: 12,
+                                                            color: AppColors
+                                                                .fenceGreen)),
+                                                Text('-\$100.00',
+                                                    style: AppTextStyles.bold(
+                                                        fontSize: 15,
+                                                        color: AppColors
+                                                            .oceanBlue)),
+                                              ],
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -306,8 +321,8 @@ class HomePage extends StatelessWidget {
                           itemCount: allHomepageTransaction.length,
                           itemBuilder: (context, index) {
                             return HomePageTransactionWidget(
-                              transactionModel: allHomepageTransaction[index],
-                            );
+                                transactionModel:
+                                    allHomepageTransaction[index]);
                           },
                         ))
                       ],

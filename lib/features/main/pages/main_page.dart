@@ -32,7 +32,10 @@ class MainScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 GestureDetector(
-                  onTap: () => mainProvider.changeMainPageIndex(index: 0),
+                  onTap: () {
+                    mainProvider.changeMainPageIndex(index: 0);
+                    mainProvider.changeHomePageSubIndex(index: 0);
+                  },
                   child: Container(
                     height: 50,
                     width: 54,

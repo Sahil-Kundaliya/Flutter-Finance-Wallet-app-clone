@@ -27,4 +27,8 @@ class AppImages {
   static const String foodIcon = 'assets/images/Food.png';
   static const String groceriesIcon = 'assets/images/groceries.png';
   static const String rentIcon = 'assets/images/rent.png';
+  static const String incomeExpensesChart =
+      'assets/images/income_expenses_chart.png';
+  static const String aprilExpensesChart =
+      'assets/images/april_expenses_chart.png';
 }

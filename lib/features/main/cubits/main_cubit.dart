@@ -13,7 +13,8 @@ class MainCubit extends Cubit<MainState> {
 
   //home page
   int homePageReportIndex = 0;
-  int homePageSubIndex = 0;
+  int homePageSubIndex =
+      0; // 0-Home page, 1-Notification page, 2-Account Balance page, 3-Quickly Analysis page
 
   changeMainPageIndex({required int index}) {
     mainPageIndex = index;
