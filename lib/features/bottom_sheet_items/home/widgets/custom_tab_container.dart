@@ -20,7 +20,6 @@ class CustomTabContainer extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 8),
         decoration: BoxDecoration(
             color: color, borderRadius: BorderRadius.circular(19)),
         child: Padding(
@@ -29,7 +28,7 @@ class CustomTabContainer extends StatelessWidget {
               child: Text(title,
                   style: textStyle ??
                       AppTextStyles.regular(
-                          fontSize: 15, color: AppColors.fenceGreen))),
+                          fontSize: 13, color: AppColors.fenceGreen))),
         ),
       ),
     );

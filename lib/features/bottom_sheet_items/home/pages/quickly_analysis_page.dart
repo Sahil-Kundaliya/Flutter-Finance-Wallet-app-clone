@@ -1,11 +1,9 @@
 import 'package:finance_wallet_app_clone/constant/app_colors.dart';
 import 'package:finance_wallet_app_clone/constant/app_images.dart';
 import 'package:finance_wallet_app_clone/constant/app_text_styles.dart';
-import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/models/notification_model.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/models/transaction_model.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/widgets/circular_progress_bar.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/widgets/home_page_transaction_widget.dart';
-import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/widgets/notification_widget.dart';
 import 'package:finance_wallet_app_clone/features/main/cubits/main_cubit.dart';
 import 'package:finance_wallet_app_clone/features/main/cubits/main_state.dart';
 import 'package:flutter/material.dart';
@@ -75,7 +73,18 @@ class QuicklyAnalysisScreen extends StatelessWidget {
                             children: [
                               Column(
                                 children: [
-                                  CircularProgressBar(),
+                                  CircularProgressBar(
+                                    progressCircleHeight: 68,
+                                    progressCircleWidth: 68,
+                                    progressCircleValue: 0.5,
+                                    progressCircleColor: AppColors.oceanBlue,
+                                    progressCircleBackgroundColor:
+                                        AppColors.honeydew,
+                                    centerWidget: Image.asset(AppImages.carIcon,
+                                        // Replace with your image path
+                                        height: 21,
+                                        width: 37),
+                                  ),
                                   Padding(
                                     padding: const EdgeInsets.only(top: 4.0),
                                     child: Text('Savings\non goals',

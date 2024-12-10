@@ -174,7 +174,20 @@ class HomePage extends StatelessWidget {
                                 children: [
                                   Column(
                                     children: [
-                                      CircularProgressBar(),
+                                      CircularProgressBar(
+                                        progressCircleHeight: 68,
+                                        progressCircleWidth: 68,
+                                        progressCircleValue: 0.5,
+                                        progressCircleColor:
+                                            AppColors.oceanBlue,
+                                        progressCircleBackgroundColor:
+                                            AppColors.honeydew,
+                                        centerWidget:
+                                            Image.asset(AppImages.carIcon,
+                                                // Replace with your image path
+                                                height: 21,
+                                                width: 37),
+                                      ),
                                       Padding(
                                         padding:
                                             const EdgeInsets.only(top: 4.0),

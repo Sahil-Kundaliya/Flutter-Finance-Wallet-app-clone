@@ -31,4 +31,11 @@ class AppImages {
       'assets/images/income_expenses_chart.png';
   static const String aprilExpensesChart =
       'assets/images/april_expenses_chart.png';
+
+  // analysis
+  static const String dailyAnalysisChart = 'assets/images/daily_analysis.png';
+  static const String weeklyAnalysisChart = 'assets/images/weekly_analysis.png';
+  static const String monthlyAnalysisChart =
+      'assets/images/monthly_analysis.png';
+  static const String yearAnalysisChart = 'assets/images/year_analysis.png';
 }
