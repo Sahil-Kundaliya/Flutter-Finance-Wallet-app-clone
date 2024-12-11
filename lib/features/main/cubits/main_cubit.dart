@@ -1,5 +1,7 @@
 import 'package:finance_wallet_app_clone/constant/app_images.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/analysis/pages/analysis_page.dart';
+import 'package:finance_wallet_app_clone/features/bottom_sheet_items/analysis/pages/calendar_page.dart';
+import 'package:finance_wallet_app_clone/features/bottom_sheet_items/analysis/pages/search_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/pages/account_balance_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/pages/home_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/pages/notification_page.dart';
@@ -17,9 +19,23 @@ class MainCubit extends Cubit<MainState> {
   int homePageReportIndex = 0;
   int homePageSubIndex =
       0; // 0-Home page, 1-Notification page, 2-Account Balance page, 3-Quickly Analysis page
+  int analysisPageSubIndex =
+      0; //0-Home page, 1-Notification page, 3-Search page, 4-Calendar page
 
   // Analysis
   int analysisReportIndex = 0;
+  final List<String> categories = [
+    "Food",
+    "Transport",
+    "Groceries",
+    "Rent",
+    "Gifts",
+    "Medicine",
+    "Entertainment",
+    "Savings"
+  ];
+  String? selectedCategory;
+  int selectedRadio = 0;
 
   changeMainPageIndex({required int index}) {
     mainPageIndex = index;
@@ -36,8 +52,15 @@ class MainCubit extends Cubit<MainState> {
     updateState();
   }
 
-  changeHomePageSubIndex({required int index}) {
-    homePageSubIndex = index;
+  changeSubIndex({required int index, required String pageName}) {
+    switch (pageName) {
+      case "Home":
+        homePageSubIndex = index;
+        break;
+      case "Analysis":
+        analysisPageSubIndex = index;
+        break;
+    }
     updateState();
   }
 
@@ -45,25 +68,47 @@ class MainCubit extends Cubit<MainState> {
     emit(UpdateMainState());
   }
 
+  changeDropDownValue({required String dropdownValue}) {
+    selectedCategory = dropdownValue;
+    updateState();
+  }
+
+  changeRadioValue({required int radioValue}) {
+    selectedRadio = radioValue;
+    updateState();
+  }
+
   Widget getMainScreenWidget() {
     switch (mainPageIndex) {
       case 0:
         switch (homePageSubIndex) {
           case 0:
-            return HomePage();
+            return const HomePage();
           case 1:
-            return NotificationScreen();
+            return const NotificationScreen();
           case 2:
-            return AccountBalanceScreen();
+            return const AccountBalanceScreen();
           case 3:
-            return QuicklyAnalysisScreen();
+            return const QuicklyAnalysisScreen();
           default:
-            return HomePage();
+            return const HomePage();
         }
       case 1:
-        return AnalysisPage();
+        switch (analysisPageSubIndex) {
+          case 0:
+            return const AnalysisPage();
+          case 1:
+            return const NotificationScreen();
+          case 2:
+            return SearchScreen();
+          case 3:
+            return const CalendarScreen();
+          default:
+            return const AnalysisPage();
+        }
+
       default:
-        return HomePage();
+        return const HomePage();
     }
   }
 

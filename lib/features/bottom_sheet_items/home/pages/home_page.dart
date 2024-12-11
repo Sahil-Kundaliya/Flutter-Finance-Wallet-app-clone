@@ -29,7 +29,8 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: [
               GestureDetector(
-                onTap: () => mainProvider.changeHomePageSubIndex(index: 2),
+                onTap: () =>
+                    mainProvider.changeSubIndex(index: 2, pageName: "Home"),
                 behavior: HitTestBehavior.opaque,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
@@ -54,8 +55,8 @@ class HomePage extends StatelessWidget {
                             ],
                           ),
                           GestureDetector(
-                            onTap: () =>
-                                mainProvider.changeHomePageSubIndex(index: 1),
+                            onTap: () => mainProvider.changeSubIndex(
+                                index: 1, pageName: "Home"),
                             child: CircleAvatar(
                                 radius: 15,
                                 backgroundColor: AppColors.lightGreen,
@@ -157,8 +158,8 @@ class HomePage extends StatelessWidget {
                     child: Column(
                       children: [
                         GestureDetector(
-                          onTap: () =>
-                              mainProvider.changeHomePageSubIndex(index: 3),
+                          onTap: () => mainProvider.changeSubIndex(
+                              index: 3, pageName: "Home"),
                           behavior: HitTestBehavior.opaque,
                           child: Container(
                             width: size.width,

@@ -34,7 +34,7 @@ class MainScreen extends StatelessWidget {
                 GestureDetector(
                   onTap: () {
                     mainProvider.changeMainPageIndex(index: 0);
-                    mainProvider.changeHomePageSubIndex(index: 0);
+                    mainProvider.changeSubIndex(index: 0, pageName: "Home");
                   },
                   child: Container(
                     height: 50,
@@ -52,7 +52,10 @@ class MainScreen extends StatelessWidget {
                   ),
                 ),
                 GestureDetector(
-                  onTap: () => mainProvider.changeMainPageIndex(index: 1),
+                  onTap: () {
+                    mainProvider.changeMainPageIndex(index: 1);
+                    mainProvider.changeSubIndex(index: 0, pageName: "Analysis");
+                  },
                   child: Container(
                     height: 50,
                     width: 54,

@@ -38,7 +38,8 @@ class AccountBalanceScreen extends StatelessWidget {
                           children: [
                             IconButton(
                               onPressed: () {
-                                mainProvider.changeHomePageSubIndex(index: 0);
+                                mainProvider.changeSubIndex(
+                                    index: 0, pageName: "Home");
                               },
                               constraints: const BoxConstraints(),
                               // Removes default constraints

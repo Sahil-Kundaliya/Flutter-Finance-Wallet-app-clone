@@ -1,7 +1,7 @@
 import 'package:finance_wallet_app_clone/constant/app_colors.dart';
 import 'package:finance_wallet_app_clone/constant/app_images.dart';
 import 'package:finance_wallet_app_clone/constant/app_text_styles.dart';
-import 'package:finance_wallet_app_clone/features/bottom_sheet_items/analysis/pages/widget/target_widget.dart';
+import 'package:finance_wallet_app_clone/features/bottom_sheet_items/analysis/widget/target_widget.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/widgets/custom_tab_container.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/widgets/money_percentage_progressbar.dart';
 import 'package:finance_wallet_app_clone/features/main/cubits/main_cubit.dart';
@@ -38,8 +38,8 @@ class AnalysisPage extends StatelessWidget {
                         ),
                       ),
                       GestureDetector(
-                        onTap: () =>
-                            mainProvider.changeHomePageSubIndex(index: 1),
+                        onTap: () => mainProvider.changeSubIndex(
+                            index: 1, pageName: "Analysis"),
                         child: CircleAvatar(
                             radius: 15,
                             backgroundColor: AppColors.lightGreen,
@@ -200,7 +200,10 @@ class AnalysisPage extends StatelessWidget {
                               child: Row(
                                 children: [
                                   GestureDetector(
-                                    onTap: () {},
+                                    onTap: () {
+                                      mainProvider.changeSubIndex(
+                                          index: 2, pageName: "Analysis");
+                                    },
                                     child: Container(
                                       height: 35,
                                       width: 35,
@@ -208,7 +211,7 @@ class AnalysisPage extends StatelessWidget {
                                           color: AppColors.caribbeanGreen,
                                           borderRadius:
                                               BorderRadius.circular(12.5)),
-                                      child: Icon(
+                                      child: const Icon(
                                         Icons.search,
                                       ),
                                     ),
@@ -216,7 +219,10 @@ class AnalysisPage extends StatelessWidget {
                                   Padding(
                                     padding: const EdgeInsets.only(left: 8),
                                     child: GestureDetector(
-                                      onTap: () {},
+                                      onTap: () {
+                                        mainProvider.changeSubIndex(
+                                            index: 3, pageName: "Analysis");
+                                      },
                                       child: Container(
                                         height: 35,
                                         width: 35,
@@ -224,7 +230,7 @@ class AnalysisPage extends StatelessWidget {
                                             color: AppColors.caribbeanGreen,
                                             borderRadius:
                                                 BorderRadius.circular(12.5)),
-                                        child: Icon(
+                                        child: const Icon(
                                           Icons.calendar_today_outlined,
                                         ),
                                       ),

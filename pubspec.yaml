@@ -39,6 +39,7 @@ dependencies:
   google_fonts: ^6.2.1
   flutter_svg: ^2.0.15
   carousel_slider: ^5.0.0
+  dropdown_button2: ^2.3.9
 
 dev_dependencies:
   flutter_test:

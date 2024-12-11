@@ -31,7 +31,10 @@ class NotificationScreen extends StatelessWidget {
                       children: [
                         IconButton(
                           onPressed: () {
-                            mainProvider.changeHomePageSubIndex(index: 0);
+                            mainProvider.changeSubIndex(
+                                index: 0, pageName: "Home");
+                            mainProvider.changeSubIndex(
+                                index: 0, pageName: "Analysis");
                           },
                           constraints: const BoxConstraints(),
                           // Removes default constraints
