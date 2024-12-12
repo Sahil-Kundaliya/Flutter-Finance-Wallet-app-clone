@@ -1,6 +1,8 @@
 import 'package:finance_wallet_app_clone/constant/app_colors.dart';
 import 'package:finance_wallet_app_clone/constant/app_images.dart';
 import 'package:finance_wallet_app_clone/constant/app_text_styles.dart';
+import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/models/transaction_model.dart';
+import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/widgets/home_page_transaction_widget.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/widgets/money_percentage_progressbar.dart';
 import 'package:finance_wallet_app_clone/features/common_widgets/custom_radio_button.dart';
 import 'package:finance_wallet_app_clone/features/common_widgets/custom_text_field.dart';
@@ -251,7 +253,70 @@ class SearchScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                    )
+                    ),
+                    if (mainProvider.selectedRadio == 1)
+                      Padding(
+                        padding: const EdgeInsets.only(top: 20),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(18),
+                              color: AppColors.lightGreen),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 5),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 4),
+                                  child: Container(
+                                    height: 53,
+                                    width: 57,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(
+                                          22,
+                                        ),
+                                        color: AppColors.lightBlue),
+                                    child: Center(
+                                      child: Image.asset(
+                                        AppImages.foodIcon,
+                                        color: AppColors.honeydew,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 10),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "Dinner",
+                                        style: AppTextStyles.medium(
+                                            fontSize: 15,
+                                            color: AppColors.fenceGreen),
+                                      ),
+                                      Text(
+                                        "18:27 - April 30",
+                                        style: AppTextStyles.semiBold(
+                                            fontSize: 12,
+                                            color: AppColors.oceanBlue),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                const Expanded(child: SizedBox()),
+                                Text(
+                                  "-\$26,00",
+                                  style: AppTextStyles.medium(
+                                      fontSize: 15, color: AppColors.oceanBlue),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
                   ],
                 ),
               ),

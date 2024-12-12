@@ -7,15 +7,12 @@ class TransactionModel {
       {required this.transactionImage,
       required this.transactionTitle,
       required this.transactionTime,
-      required this.transactionType,
+      this.transactionType,
       required this.transactionAmount,
       required this.imageColor});
 
-  String transactionImage,
-      transactionTitle,
-      transactionTime,
-      transactionType,
-      transactionAmount;
+  String transactionImage, transactionTitle, transactionTime, transactionAmount;
+  String? transactionType;
   Color imageColor;
 }
 

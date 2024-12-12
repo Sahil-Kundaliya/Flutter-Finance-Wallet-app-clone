@@ -194,7 +194,7 @@ class QuicklyAnalysisScreen extends StatelessWidget {
                           padding: EdgeInsets.zero,
                           itemCount: allHomepageTransaction.length,
                           itemBuilder: (context, index) {
-                            return HomePageTransactionWidget(
+                            return TransactionWidget(
                                 transactionModel:
                                     allHomepageTransaction[index]);
                           },

@@ -334,7 +334,7 @@ class HomePage extends StatelessWidget {
                           shrinkWrap: true,
                           itemCount: allHomepageTransaction.length,
                           itemBuilder: (context, index) {
-                            return HomePageTransactionWidget(
+                            return TransactionWidget(
                                 transactionModel:
                                     allHomepageTransaction[index]);
                           },

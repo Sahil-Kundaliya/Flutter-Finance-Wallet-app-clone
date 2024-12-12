@@ -3,8 +3,8 @@ import 'package:finance_wallet_app_clone/constant/app_text_styles.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/models/transaction_model.dart';
 import 'package:flutter/material.dart';
 
-class HomePageTransactionWidget extends StatelessWidget {
-  const HomePageTransactionWidget({super.key, required this.transactionModel});
+class TransactionWidget extends StatelessWidget {
+  const TransactionWidget({super.key, required this.transactionModel});
 
   final TransactionModel transactionModel;
 
@@ -15,18 +15,21 @@ class HomePageTransactionWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Container(
-            height: 53,
-            width: 57,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(
-                  22,
+          Padding(
+            padding: const EdgeInsets.only(left: 4),
+            child: Container(
+              height: 53,
+              width: 57,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(
+                    22,
+                  ),
+                  color: transactionModel.imageColor),
+              child: Center(
+                child: Image.asset(
+                  transactionModel.transactionImage,
+                  color: AppColors.honeydew,
                 ),
-                color: transactionModel.imageColor),
-            child: Center(
-              child: Image.asset(
-                transactionModel.transactionImage,
-                color: AppColors.honeydew,
               ),
             ),
           ),
@@ -48,27 +51,39 @@ class HomePageTransactionWidget extends StatelessWidget {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 4),
-            child: Container(
-              height: 35,
-              width: 1.8,
-              color: AppColors.caribbeanGreen,
-            ),
-          ),
-          Text(
-            transactionModel.transactionType,
-            style:
-                AppTextStyles.light(fontSize: 13, color: AppColors.fenceGreen),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 4),
-            child: Container(
-              height: 35,
-              width: 1.8,
-              color: AppColors.caribbeanGreen,
-            ),
-          ),
+          transactionModel.transactionType != null
+              ? Expanded(
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8),
+                        child: Container(
+                          height: 35,
+                          width: 1.8,
+                          color: AppColors.caribbeanGreen,
+                        ),
+                      ),
+                      Expanded(
+                        child: Center(
+                          child: Text(
+                            transactionModel.transactionType!,
+                            style: AppTextStyles.light(
+                                fontSize: 13, color: AppColors.fenceGreen),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 4),
+                        child: Container(
+                          height: 35,
+                          width: 1.8,
+                          color: AppColors.caribbeanGreen,
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+              : const Expanded(child: SizedBox()),
           Text(
             transactionModel.transactionAmount,
             style: AppTextStyles.medium(

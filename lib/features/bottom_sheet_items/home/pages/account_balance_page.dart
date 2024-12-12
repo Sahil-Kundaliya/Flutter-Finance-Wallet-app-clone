@@ -271,7 +271,7 @@ class AccountBalanceScreen extends StatelessWidget {
                           physics: NeverScrollableScrollPhysics(),
                           itemCount: allHomepageTransaction.length,
                           itemBuilder: (context, index) {
-                            return HomePageTransactionWidget(
+                            return TransactionWidget(
                               transactionModel: allHomepageTransaction[index],
                             );
                           },
