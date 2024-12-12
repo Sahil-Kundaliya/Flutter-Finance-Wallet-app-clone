@@ -24,6 +24,10 @@ class MainCubit extends Cubit<MainState> {
 
   // Analysis
   int analysisReportIndex = 0;
+  int selectedRadio = 0;
+  int calendarIndex = 0;
+  String? selectedCategory;
+
   final List<String> categories = [
     "Food",
     "Transport",
@@ -34,8 +38,6 @@ class MainCubit extends Cubit<MainState> {
     "Entertainment",
     "Savings"
   ];
-  String? selectedCategory;
-  int selectedRadio = 0;
 
   changeMainPageIndex({required int index}) {
     mainPageIndex = index;
@@ -49,6 +51,11 @@ class MainCubit extends Cubit<MainState> {
 
   changeAnalysisPageReportIndex({required int index}) {
     analysisReportIndex = index;
+    updateState();
+  }
+
+  changeAnalysisPageCalendarIndex({required int index}) {
+    calendarIndex = index;
     updateState();
   }
 

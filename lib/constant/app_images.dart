@@ -38,4 +38,6 @@ class AppImages {
   static const String monthlyAnalysisChart =
       'assets/images/monthly_analysis.png';
   static const String yearAnalysisChart = 'assets/images/year_analysis.png';
+  static const String calendar = 'assets/images/calendar.png';
+  static const String categoriesChart = 'assets/images/categories_chart.png';
 }
