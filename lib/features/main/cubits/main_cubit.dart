@@ -6,6 +6,7 @@ import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/pages/
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/pages/home_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/pages/notification_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/pages/quickly_analysis_page.dart';
+import 'package:finance_wallet_app_clone/features/bottom_sheet_items/transaction/pages/transaction_page.dart';
 import 'package:finance_wallet_app_clone/features/main/cubits/main_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -39,6 +40,9 @@ class MainCubit extends Cubit<MainState> {
     "Savings"
   ];
 
+  // Transactions
+  int transactionId = 0;
+
   changeMainPageIndex({required int index}) {
     mainPageIndex = index;
     updateState();
@@ -56,6 +60,11 @@ class MainCubit extends Cubit<MainState> {
 
   changeAnalysisPageCalendarIndex({required int index}) {
     calendarIndex = index;
+    updateState();
+  }
+
+  changeTransactionId({required int index}) {
+    transactionId = index;
     updateState();
   }
 
@@ -113,6 +122,8 @@ class MainCubit extends Cubit<MainState> {
           default:
             return const AnalysisPage();
         }
+      case 2:
+        return const TransactionPage();
 
       default:
         return const HomePage();

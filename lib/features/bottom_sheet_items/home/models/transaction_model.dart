@@ -39,3 +39,44 @@ List<TransactionModel> allHomepageTransaction = [
       transactionAmount: "-\$674,40",
       imageColor: AppColors.oceanBlue),
 ];
+
+List<TransactionModel> allIncomeTransaction = [
+  TransactionModel(
+      transactionImage: AppImages.salaryIcon,
+      transactionTitle: 'Salary',
+      transactionTime: "18:27 - April 30",
+      transactionType: "Monthly",
+      transactionAmount: "\$4.000,00",
+      imageColor: AppColors.lightBlue),
+  TransactionModel(
+      transactionImage: AppImages.salaryIcon,
+      transactionTitle: 'Other',
+      transactionTime: "17:00 - April 24",
+      transactionType: "Payments",
+      transactionAmount: "\$120,00",
+      imageColor: AppColors.lightBlue),
+];
+
+List<TransactionModel> allExpenseTransaction = [
+  TransactionModel(
+      transactionImage: AppImages.groceriesIcon,
+      transactionTitle: 'Groceries',
+      transactionTime: "17:00 - April 24",
+      transactionType: "Pantry",
+      transactionAmount: "-\$100",
+      imageColor: AppColors.lightBlue),
+  TransactionModel(
+      transactionImage: AppImages.rentIcon,
+      transactionTitle: 'Rent',
+      transactionTime: "8:30 - April 15",
+      transactionType: "Rent",
+      transactionAmount: "-\$674,40",
+      imageColor: AppColors.oceanBlue),
+  TransactionModel(
+      transactionImage: AppImages.groceriesIcon,
+      transactionTitle: 'Groceries',
+      transactionTime: "17:00 - April 24",
+      transactionType: "Pantry",
+      transactionAmount: "-\$100,00",
+      imageColor: AppColors.vividBlue),
+];

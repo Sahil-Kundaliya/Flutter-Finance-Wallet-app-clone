@@ -1,11 +1,9 @@
 import 'package:finance_wallet_app_clone/constant/app_colors.dart';
 import 'package:finance_wallet_app_clone/constant/app_images.dart';
 import 'package:finance_wallet_app_clone/constant/app_text_styles.dart';
-import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/models/notification_model.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/models/transaction_model.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/widgets/home_page_transaction_widget.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/widgets/money_percentage_progressbar.dart';
-import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/widgets/notification_widget.dart';
 import 'package:finance_wallet_app_clone/features/main/cubits/main_cubit.dart';
 import 'package:finance_wallet_app_clone/features/main/cubits/main_state.dart';
 import 'package:flutter/material.dart';
@@ -203,7 +201,7 @@ class AccountBalanceScreen extends StatelessWidget {
                                           '\$1.187.40',
                                           style: AppTextStyles.semiBold(
                                               fontSize: 20,
-                                              color: AppColors.lettersAndIcons),
+                                              color: AppColors.oceanBlue),
                                         ),
                                       ],
                                     ),
