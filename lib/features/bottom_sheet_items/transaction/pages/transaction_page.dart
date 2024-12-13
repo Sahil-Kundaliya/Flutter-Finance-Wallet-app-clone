@@ -92,7 +92,9 @@ class TransactionPage extends StatelessWidget {
                             behavior: HitTestBehavior.opaque,
                             child: Container(
                               decoration: BoxDecoration(
-                                  color: AppColors.honeydew,
+                                  color: mainProvider.transactionId == 1
+                                      ? AppColors.oceanBlue
+                                      : AppColors.honeydew,
                                   borderRadius: BorderRadius.circular(14.5)),
                               child: Padding(
                                 padding:
@@ -101,7 +103,9 @@ class TransactionPage extends StatelessWidget {
                                   children: [
                                     Image.asset(
                                       AppImages.incomeIcon,
-                                      color: AppColors.caribbeanGreen,
+                                      color: mainProvider.transactionId == 1
+                                          ? AppColors.honeydew
+                                          : AppColors.caribbeanGreen,
                                       width: 30,
                                       height: 30,
                                     ),
@@ -109,13 +113,17 @@ class TransactionPage extends StatelessWidget {
                                       'Income',
                                       style: AppTextStyles.medium(
                                           fontSize: 15,
-                                          color: AppColors.lettersAndIcons),
+                                          color: mainProvider.transactionId == 1
+                                              ? AppColors.honeydew
+                                              : AppColors.lettersAndIcons),
                                     ),
                                     Text(
                                       '\$4,000.00',
                                       style: AppTextStyles.semiBold(
                                           fontSize: 20,
-                                          color: AppColors.lettersAndIcons),
+                                          color: mainProvider.transactionId == 1
+                                              ? AppColors.honeydew
+                                              : AppColors.lettersAndIcons),
                                     ),
                                   ],
                                 ),
@@ -138,7 +146,9 @@ class TransactionPage extends StatelessWidget {
                             behavior: HitTestBehavior.opaque,
                             child: Container(
                               decoration: BoxDecoration(
-                                  color: AppColors.honeydew,
+                                  color: mainProvider.transactionId == 2
+                                      ? AppColors.oceanBlue
+                                      : AppColors.honeydew,
                                   borderRadius: BorderRadius.circular(14.5)),
                               child: Padding(
                                 padding:
@@ -147,7 +157,9 @@ class TransactionPage extends StatelessWidget {
                                   children: [
                                     Image.asset(
                                       AppImages.expenseIcon,
-                                      color: AppColors.oceanBlue,
+                                      color: mainProvider.transactionId == 2
+                                          ? AppColors.honeydew
+                                          : AppColors.oceanBlue,
                                       width: 30,
                                       height: 30,
                                     ),
@@ -155,13 +167,17 @@ class TransactionPage extends StatelessWidget {
                                       'Expense',
                                       style: AppTextStyles.medium(
                                           fontSize: 15,
-                                          color: AppColors.lettersAndIcons),
+                                          color: mainProvider.transactionId == 2
+                                              ? AppColors.honeydew
+                                              : AppColors.lettersAndIcons),
                                     ),
                                     Text(
                                       '\$1.187.40',
                                       style: AppTextStyles.semiBold(
                                           fontSize: 20,
-                                          color: AppColors.oceanBlue),
+                                          color: mainProvider.transactionId == 2
+                                              ? AppColors.honeydew
+                                              : AppColors.oceanBlue),
                                     ),
                                   ],
                                 ),
