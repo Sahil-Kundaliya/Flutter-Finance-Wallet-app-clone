@@ -35,6 +35,10 @@ class NotificationScreen extends StatelessWidget {
                                 index: 0, pageName: "Home");
                             mainProvider.changeSubIndex(
                                 index: 0, pageName: "Analysis");
+                            mainProvider.changeSubIndex(
+                                index: 0, pageName: "Transactions");
+                            mainProvider.changeSubIndex(
+                                index: 0, pageName: "Categories");
                           },
                           constraints: const BoxConstraints(),
                           // Removes default constraints

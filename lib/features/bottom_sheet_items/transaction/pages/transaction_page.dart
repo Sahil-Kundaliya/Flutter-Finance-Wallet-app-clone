@@ -30,21 +30,6 @@ class TransactionPage extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      IconButton(
-                        onPressed: () {
-                          mainProvider.changeSubIndex(
-                              index: 0, pageName: "Analysis");
-                        },
-                        constraints: const BoxConstraints(),
-                        // Removes default constraints
-                        padding: EdgeInsets.zero,
-                        // Removes default padding
-                        icon: const Icon(
-                          Icons.arrow_back,
-                          color: AppColors.whiteColor,
-                          size: 24,
-                        ),
-                      ),
                       Expanded(
                         child: Center(
                           child: Text('Transaction',
@@ -54,7 +39,7 @@ class TransactionPage extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () => mainProvider.changeSubIndex(
-                            index: 1, pageName: "Analysis"),
+                            index: 1, pageName: "Transactions"),
                         child: CircleAvatar(
                             radius: 15,
                             backgroundColor: AppColors.lightGreen,

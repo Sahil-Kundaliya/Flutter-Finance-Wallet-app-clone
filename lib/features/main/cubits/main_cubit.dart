@@ -2,6 +2,7 @@ import 'package:finance_wallet_app_clone/constant/app_images.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/analysis/pages/analysis_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/analysis/pages/calendar_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/analysis/pages/search_page.dart';
+import 'package:finance_wallet_app_clone/features/bottom_sheet_items/categories/pages/categories_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/pages/account_balance_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/pages/home_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/pages/notification_page.dart';
@@ -42,6 +43,10 @@ class MainCubit extends Cubit<MainState> {
 
   // Transactions
   int transactionId = 0;
+  int transactionPageSubIndex = 0;
+
+  // Categories
+  int categoriesPageSubIndex = 0;
 
   changeMainPageIndex({required int index}) {
     mainPageIndex = index;
@@ -75,6 +80,12 @@ class MainCubit extends Cubit<MainState> {
         break;
       case "Analysis":
         analysisPageSubIndex = index;
+        break;
+      case "Transactions":
+        transactionPageSubIndex = index;
+        break;
+      case "Categories":
+        categoriesPageSubIndex = index;
         break;
     }
     updateState();
@@ -123,7 +134,31 @@ class MainCubit extends Cubit<MainState> {
             return const AnalysisPage();
         }
       case 2:
-        return const TransactionPage();
+        switch (transactionPageSubIndex) {
+          case 0:
+            return const TransactionPage();
+          case 1:
+            return const NotificationScreen();
+          case 2:
+            return SearchScreen();
+          case 3:
+            return const CalendarScreen();
+          default:
+            return const AnalysisPage();
+        }
+      case 3:
+        switch (categoriesPageSubIndex) {
+          case 0:
+            return const CategoriesScreen();
+          case 1:
+            return const NotificationScreen();
+          case 2:
+            return SearchScreen();
+          case 3:
+            return const CalendarScreen();
+          default:
+            return const AnalysisPage();
+        }
 
       default:
         return const HomePage();

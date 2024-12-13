@@ -250,7 +250,11 @@ class HomePage extends StatelessWidget {
                                         mainAxisAlignment:
                                             MainAxisAlignment.start,
                                         children: [
-                                          Image.asset(AppImages.foodIcon),
+                                          Image.asset(
+                                            AppImages.foodIcon,
+                                            scale: 6,
+                                            color: AppColors.lettersAndIcons,
+                                          ),
                                           Padding(
                                             padding: const EdgeInsets.only(
                                                 left: 8.0),

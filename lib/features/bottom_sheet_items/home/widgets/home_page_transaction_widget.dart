@@ -29,6 +29,7 @@ class TransactionWidget extends StatelessWidget {
                 child: Image.asset(
                   transactionModel.transactionImage,
                   color: AppColors.honeydew,
+                  scale: 6,
                 ),
               ),
             ),

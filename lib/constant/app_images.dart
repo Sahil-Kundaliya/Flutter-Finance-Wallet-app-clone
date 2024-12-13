@@ -23,10 +23,6 @@ class AppImages {
   static const String incomeIcon = 'assets/images/Income.png';
   static const String expenseIcon = 'assets/images/Expense.png';
   static const String carIcon = 'assets/images/Car.png';
-  static const String salaryIcon = 'assets/images/Salary.png';
-  static const String foodIcon = 'assets/images/Food.png';
-  static const String groceriesIcon = 'assets/images/groceries.png';
-  static const String rentIcon = 'assets/images/rent.png';
   static const String incomeExpensesChart =
       'assets/images/income_expenses_chart.png';
   static const String aprilExpensesChart =
@@ -40,4 +36,16 @@ class AppImages {
   static const String yearAnalysisChart = 'assets/images/year_analysis.png';
   static const String calendar = 'assets/images/calendar.png';
   static const String categoriesChart = 'assets/images/categories_chart.png';
+
+// categories
+  static const String busIcon = 'assets/images/bus_icon.png';
+  static const String entertainmentIcon =
+      'assets/images/entertainment_icon.png';
+  static const String giftsIcon = 'assets/images/gifts_icon.png';
+  static const String medicineIcon = 'assets/images/medicine_icon.png';
+  static const String savingIcon = 'assets/images/saving_icon.png';
+  static const String salaryIcon = 'assets/images/salary_icon.png';
+  static const String foodIcon = 'assets/images/food_icon.png';
+  static const String groceriesIcon = 'assets/images/groceries_icon.png';
+  static const String rentIcon = 'assets/images/rent_icon.png';
 }
