@@ -1,15 +1,14 @@
 import 'package:finance_wallet_app_clone/constant/app_colors.dart';
-import 'package:finance_wallet_app_clone/constant/app_images.dart';
 import 'package:finance_wallet_app_clone/constant/app_text_styles.dart';
-import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/models/transaction_model.dart';
-import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/widgets/home_page_transaction_widget.dart';
-import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/widgets/money_percentage_progressbar.dart';
+import 'package:finance_wallet_app_clone/features/bottom_sheet_items/analysis/widget/transaction_without_type_widget.dart';
 import 'package:finance_wallet_app_clone/features/common_widgets/custom_radio_button.dart';
 import 'package:finance_wallet_app_clone/features/common_widgets/custom_text_field.dart';
 import 'package:finance_wallet_app_clone/features/main/cubits/main_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../../../../constant/app_images.dart';
 
 class SearchScreen extends StatelessWidget {
   SearchScreen({super.key});
@@ -119,7 +118,7 @@ class SearchScreen extends StatelessWidget {
                               ),
                               child: DropdownButtonHideUnderline(
                                 child: DropdownButton<String>(
-                                  value: mainProvider.selectedCategory,
+                                  value: mainProvider.selectedSearchCategory,
                                   icon: Icon(Icons.arrow_drop_down,
                                       color: AppColors.caribbeanGreen),
                                   hint: Text(
@@ -136,7 +135,7 @@ class SearchScreen extends StatelessWidget {
                                     mainProvider.changeDropDownValue(
                                         dropdownValue: value ?? '');
                                   },
-                                  items: mainProvider.categories
+                                  items: mainProvider.searchCategories
                                       .map<DropdownMenuItem<String>>(
                                           (String value) {
                                     return DropdownMenuItem<String>(
@@ -256,67 +255,14 @@ class SearchScreen extends StatelessWidget {
                     ),
                     if (mainProvider.selectedRadio == 1)
                       Padding(
-                        padding: const EdgeInsets.only(top: 20),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(18),
-                              color: AppColors.lightGreen),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 10, horizontal: 5),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 4),
-                                  child: Container(
-                                    height: 53,
-                                    width: 57,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(
-                                          22,
-                                        ),
-                                        color: AppColors.lightBlue),
-                                    child: Center(
-                                      child: Image.asset(
-                                        AppImages.foodIcon,
-                                        color: AppColors.honeydew,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 10),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        "Dinner",
-                                        style: AppTextStyles.medium(
-                                            fontSize: 15,
-                                            color: AppColors.fenceGreen),
-                                      ),
-                                      Text(
-                                        "18:27 - April 30",
-                                        style: AppTextStyles.semiBold(
-                                            fontSize: 12,
-                                            color: AppColors.oceanBlue),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                const Expanded(child: SizedBox()),
-                                Text(
-                                  "-\$26,00",
-                                  style: AppTextStyles.medium(
-                                      fontSize: 15, color: AppColors.oceanBlue),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
+                          padding: const EdgeInsets.only(top: 20),
+                          child: TransactionWithoutTypeWidget(
+                            title: "Dinner",
+                            image: AppImages.foodIcon,
+                            amount: "-\$26,00",
+                            boxColor: AppColors.lightBlue,
+                            time: "18:27 - April 30",
+                          )),
                   ],
                 ),
               ),

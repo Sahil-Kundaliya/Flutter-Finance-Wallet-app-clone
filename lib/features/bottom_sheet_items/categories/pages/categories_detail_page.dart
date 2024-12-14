@@ -48,7 +48,8 @@ class CategoriesDetailScreen extends StatelessWidget {
                         ),
                         Expanded(
                           child: Center(
-                            child: Text('Food',
+                            child: Text(
+                                mainProvider.selectedCategories.categoriesName,
                                 style: AppTextStyles.semiBold(
                                     fontSize: 20, color: AppColors.fenceGreen)),
                           ),
@@ -186,10 +187,12 @@ class CategoriesDetailScreen extends StatelessWidget {
                                 shrinkWrap: true,
                                 physics: const NeverScrollableScrollPhysics(),
                                 padding: EdgeInsets.zero,
-                                itemCount: allHomepageTransaction.length,
+                                itemCount: mainProvider
+                                    .getCategoryDetailList(index: 0)
+                                    .length,
                                 itemBuilder: (context, index) {
-                                  TransactionModel currentModel =
-                                      allHomepageTransaction[index];
+                                  TransactionModel currentModel = mainProvider
+                                      .getCategoryDetailList(index: 0)[index];
                                   return TransactionWidget(
                                       transactionModel: currentModel);
                                 },
@@ -212,11 +215,13 @@ class CategoriesDetailScreen extends StatelessWidget {
                               ListView.builder(
                                 shrinkWrap: true,
                                 physics: const NeverScrollableScrollPhysics(),
-                                padding: EdgeInsets.zero,
-                                itemCount: allHomepageTransaction.length,
+                                padding: const EdgeInsets.only(bottom: 35),
+                                itemCount: mainProvider
+                                    .getCategoryDetailList(index: 1)
+                                    .length,
                                 itemBuilder: (context, index) {
-                                  TransactionModel currentModel =
-                                      allHomepageTransaction[index];
+                                  TransactionModel currentModel = mainProvider
+                                      .getCategoryDetailList(index: 1)[index];
                                   return TransactionWidget(
                                       transactionModel: currentModel);
                                 },

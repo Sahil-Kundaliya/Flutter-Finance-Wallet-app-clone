@@ -14,6 +14,9 @@ import 'package:finance_wallet_app_clone/features/main/cubits/main_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../bottom_sheet_items/categories/models/categories_model.dart';
+import '../../bottom_sheet_items/home/models/transaction_model.dart';
+
 class MainCubit extends Cubit<MainState> {
   MainCubit() : super(InitialMainState());
 
@@ -30,9 +33,9 @@ class MainCubit extends Cubit<MainState> {
   int analysisReportIndex = 0;
   int selectedRadio = 0;
   int calendarIndex = 0;
-  String? selectedCategory;
+  String? selectedSearchCategory;
 
-  final List<String> categories = [
+  final List<String> searchCategories = [
     "Food",
     "Transport",
     "Groceries",
@@ -49,6 +52,7 @@ class MainCubit extends Cubit<MainState> {
 
   // Categories
   int categoriesPageSubIndex = 0;
+  CategoriesModel selectedCategories = allCategories.first;
 
   // int transactionId = 0;
 
@@ -100,7 +104,12 @@ class MainCubit extends Cubit<MainState> {
   }
 
   changeDropDownValue({required String dropdownValue}) {
-    selectedCategory = dropdownValue;
+    selectedSearchCategory = dropdownValue;
+    updateState();
+  }
+
+  changeSelectedCategory({required CategoriesModel nextCategory}) {
+    selectedCategories = nextCategory;
     updateState();
   }
 
@@ -213,5 +222,31 @@ class MainCubit extends Cubit<MainState> {
       default:
         return "";
     }
+  }
+
+  getCategoryDetailList({required int index}) {
+    if (selectedCategories == allCategories[0]) {
+      return index == 0 ? foodTransaction1 : foodTransaction2;
+    } else if (selectedCategories == allCategories[1]) {
+      return index == 0 ? transportTransaction1 : transportTransaction2;
+    } else if (selectedCategories == allCategories[2]) {
+      return index == 0 ? medicineTransaction1 : medicineTransaction2;
+    } else if (selectedCategories == allCategories[3]) {
+      return index == 0 ? groceriesTransaction1 : groceriesTransaction1;
+    } else if (selectedCategories == allCategories[4]) {
+      return index == 0 ? rentTransaction1 : rentTransaction2;
+    } else if (selectedCategories == allCategories[5]) {
+      return index == 0 ? giftsTransaction1 : giftsTransaction2;
+    } else if (selectedCategories == allCategories[7]) {
+      return index == 0 ? entertainmentTransaction1 : entertainmentTransaction2;
+    }
+    // switch (selectedCategories) {
+    //   case allCategories.:
+    //   case allCategories[1]:
+    //     return index == 0 ? foodTransaction1 : foodTransaction2;
+    //
+    //   default:
+    //     return [];
+    // }
   }
 }

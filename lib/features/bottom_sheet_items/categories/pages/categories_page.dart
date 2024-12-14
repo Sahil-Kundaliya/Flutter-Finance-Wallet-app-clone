@@ -136,18 +136,18 @@ class CategoriesScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Column(
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 35,
                         ),
                         Expanded(
                             child: GridView.builder(
                           gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
+                              const SliverGridDelegateWithFixedCrossAxisCount(
                                   childAspectRatio: 0.8,
                                   crossAxisSpacing: 10,
                                   mainAxisSpacing: 20,
                                   crossAxisCount: 3),
-                          padding: EdgeInsets.only(bottom: 10),
+                          padding: const EdgeInsets.only(bottom: 10),
                           itemCount: allCategories.length + 1,
                           itemBuilder: (context, index) {
                             if (index > allCategories.length - 1) {
@@ -162,6 +162,8 @@ class CategoriesScreen extends StatelessWidget {
                               return CategoriesItemWidget(
                                 currentModel: currentModel,
                                 onTap: () {
+                                  mainProvider.changeSelectedCategory(
+                                      nextCategory: currentModel);
                                   mainProvider.changeSubIndex(
                                       index: 2, pageName: "Categories");
                                 },
