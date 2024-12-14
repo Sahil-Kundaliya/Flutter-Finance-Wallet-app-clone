@@ -2,6 +2,8 @@ import 'package:finance_wallet_app_clone/constant/app_images.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/analysis/pages/analysis_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/analysis/pages/calendar_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/analysis/pages/search_page.dart';
+import 'package:finance_wallet_app_clone/features/bottom_sheet_items/categories/pages/add_expenses_page.dart';
+import 'package:finance_wallet_app_clone/features/bottom_sheet_items/categories/pages/categories_detail_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/categories/pages/categories_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/pages/account_balance_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/pages/home_page.dart';
@@ -47,6 +49,8 @@ class MainCubit extends Cubit<MainState> {
 
   // Categories
   int categoriesPageSubIndex = 0;
+
+  // int transactionId = 0;
 
   changeMainPageIndex({required int index}) {
     mainPageIndex = index;
@@ -153,9 +157,9 @@ class MainCubit extends Cubit<MainState> {
           case 1:
             return const NotificationScreen();
           case 2:
-            return SearchScreen();
+            return const CategoriesDetailScreen();
           case 3:
-            return const CalendarScreen();
+            return AddExpensesScreen();
           default:
             return const AnalysisPage();
         }

@@ -42,14 +42,14 @@ class CustomTextField extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.only(top: 8),
-          child: Container(
+          child: SizedBox(
             height: 41, // Height of the TextFormField
             child: TextFormField(
                 controller: textEditingController,
-                style: TextStyle(color: Colors.black), // Text color
+                style: const TextStyle(color: Colors.black), // Text color
                 decoration: InputDecoration(
                   contentPadding:
-                      EdgeInsets.symmetric(vertical: 8, horizontal: 15),
+                      const EdgeInsets.symmetric(vertical: 8, horizontal: 15),
                   hintText: textFieldHintText,
                   hintStyle: textFieldHintTextStyle ??
                       AppTextStyles.regular(

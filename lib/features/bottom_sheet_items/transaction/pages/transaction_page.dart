@@ -198,92 +198,90 @@ class TransactionPage extends StatelessWidget {
                     borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(65),
                         topRight: Radius.circular(65))),
-                child: Container(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: SingleChildScrollView(
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(top: 35),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  "April",
-                                  style: AppTextStyles.medium(
-                                      fontSize: 15,
-                                      color: AppColors.lettersAndIcons),
-                                ),
-                                Container(
-                                  height: 30,
-                                  width: 32,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(12.4),
-                                    color: AppColors.caribbeanGreen,
-                                  ),
-                                  child: Icon(
-                                    Icons.calendar_month_outlined,
-                                    size: 20,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          ListView.builder(
-                            shrinkWrap: true,
-                            physics: NeverScrollableScrollPhysics(),
-                            padding: EdgeInsets.zero,
-                            itemCount: mainProvider.transactionId == 0
-                                ? allHomepageTransaction.length
-                                : mainProvider.transactionId == 1
-                                    ? allIncomeTransaction.length
-                                    : allExpenseTransaction.length,
-                            itemBuilder: (context, index) {
-                              TransactionModel currentModel =
-                                  mainProvider.transactionId == 0
-                                      ? allHomepageTransaction[index]
-                                      : mainProvider.transactionId == 1
-                                          ? allIncomeTransaction[index]
-                                          : allExpenseTransaction[index];
-                              return TransactionWidget(
-                                  transactionModel: currentModel);
-                            },
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 10.0),
-                            child: Align(
-                              alignment: Alignment.centerLeft,
-                              child: Text(
-                                "March",
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(top: 35),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "April",
                                 style: AppTextStyles.medium(
                                     fontSize: 15,
                                     color: AppColors.lettersAndIcons),
                               ),
+                              Container(
+                                height: 30,
+                                width: 32,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(12.4),
+                                  color: AppColors.caribbeanGreen,
+                                ),
+                                child: Icon(
+                                  Icons.calendar_month_outlined,
+                                  size: 20,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        ListView.builder(
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          padding: EdgeInsets.zero,
+                          itemCount: mainProvider.transactionId == 0
+                              ? allHomepageTransaction.length
+                              : mainProvider.transactionId == 1
+                                  ? allIncomeTransaction.length
+                                  : allExpenseTransaction.length,
+                          itemBuilder: (context, index) {
+                            TransactionModel currentModel =
+                                mainProvider.transactionId == 0
+                                    ? allHomepageTransaction[index]
+                                    : mainProvider.transactionId == 1
+                                        ? allIncomeTransaction[index]
+                                        : allExpenseTransaction[index];
+                            return TransactionWidget(
+                                transactionModel: currentModel);
+                          },
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 10.0),
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              "March",
+                              style: AppTextStyles.medium(
+                                  fontSize: 15,
+                                  color: AppColors.lettersAndIcons),
                             ),
                           ),
-                          ListView.builder(
-                            shrinkWrap: true,
-                            physics: NeverScrollableScrollPhysics(),
-                            padding: EdgeInsets.only(bottom: 10),
-                            itemCount: mainProvider.transactionId == 0
-                                ? allHomepageTransaction.length
-                                : mainProvider.transactionId == 1
-                                    ? allIncomeTransaction.length
-                                    : allExpenseTransaction.length,
-                            itemBuilder: (context, index) {
-                              TransactionModel currentModel =
-                                  mainProvider.transactionId == 0
-                                      ? allHomepageTransaction[index]
-                                      : mainProvider.transactionId == 1
-                                          ? allIncomeTransaction[index]
-                                          : allExpenseTransaction[index];
-                              return TransactionWidget(
-                                  transactionModel: currentModel);
-                            },
-                          ),
-                        ],
-                      ),
+                        ),
+                        ListView.builder(
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          padding: EdgeInsets.only(bottom: 10),
+                          itemCount: mainProvider.transactionId == 0
+                              ? allHomepageTransaction.length
+                              : mainProvider.transactionId == 1
+                                  ? allIncomeTransaction.length
+                                  : allExpenseTransaction.length,
+                          itemBuilder: (context, index) {
+                            TransactionModel currentModel =
+                                mainProvider.transactionId == 0
+                                    ? allHomepageTransaction[index]
+                                    : mainProvider.transactionId == 1
+                                        ? allIncomeTransaction[index]
+                                        : allExpenseTransaction[index];
+                            return TransactionWidget(
+                                transactionModel: currentModel);
+                          },
+                        ),
+                      ],
                     ),
                   ),
                 ),

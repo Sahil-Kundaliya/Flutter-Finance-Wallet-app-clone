@@ -6,12 +6,12 @@ import '../../../../constant/app_images.dart';
 import '../../../../constant/app_text_styles.dart';
 import '../../../main/cubits/main_cubit.dart';
 import '../../../main/cubits/main_state.dart';
+import '../../home/models/transaction_model.dart';
+import '../../home/widgets/home_page_transaction_widget.dart';
 import '../../home/widgets/money_percentage_progressbar.dart';
-import '../models/categories_model.dart';
-import '../widgets/categories_item_widget.dart';
 
-class CategoriesScreen extends StatelessWidget {
-  const CategoriesScreen({super.key});
+class CategoriesDetailScreen extends StatelessWidget {
+  const CategoriesDetailScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +31,24 @@ class CategoriesScreen extends StatelessWidget {
                   children: [
                     Row(
                       children: [
+                        IconButton(
+                          onPressed: () {
+                            mainProvider.changeSubIndex(
+                                index: 0, pageName: "Categories");
+                          },
+                          constraints: const BoxConstraints(),
+                          // Removes default constraints
+                          padding: EdgeInsets.zero,
+                          // Removes default padding
+                          icon: const Icon(
+                            Icons.arrow_back,
+                            color: AppColors.whiteColor,
+                            size: 24,
+                          ),
+                        ),
                         Expanded(
                           child: Center(
-                            child: Text('Categories',
+                            child: Text('Food',
                                 style: AppTextStyles.semiBold(
                                     fontSize: 20, color: AppColors.fenceGreen)),
                           ),
@@ -134,41 +149,106 @@ class CategoriesScreen extends StatelessWidget {
                           topRight: Radius.circular(65))),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Column(
+                    child: Stack(
                       children: [
-                        SizedBox(
-                          height: 35,
-                        ),
-                        Expanded(
-                            child: GridView.builder(
-                          gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
-                                  childAspectRatio: 0.8,
-                                  crossAxisSpacing: 10,
-                                  mainAxisSpacing: 20,
-                                  crossAxisCount: 3),
-                          padding: EdgeInsets.only(bottom: 10),
-                          itemCount: allCategories.length + 1,
-                          itemBuilder: (context, index) {
-                            if (index > allCategories.length - 1) {
-                              return CategoriesItemWidget(
-                                currentModel: allCategories.first,
-                                showAddMore: true,
-                                onTap: () {},
-                              );
-                            } else {
-                              CategoriesModel currentModel =
-                                  allCategories[index];
-                              return CategoriesItemWidget(
-                                currentModel: currentModel,
-                                onTap: () {
-                                  mainProvider.changeSubIndex(
-                                      index: 2, pageName: "Categories");
+                        SingleChildScrollView(
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(top: 35),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "April",
+                                      style: AppTextStyles.medium(
+                                          fontSize: 15,
+                                          color: AppColors.lettersAndIcons),
+                                    ),
+                                    Container(
+                                      height: 30,
+                                      width: 32,
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(12.4),
+                                        color: AppColors.caribbeanGreen,
+                                      ),
+                                      child: const Icon(
+                                        Icons.calendar_month_outlined,
+                                        size: 20,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              ListView.builder(
+                                shrinkWrap: true,
+                                physics: const NeverScrollableScrollPhysics(),
+                                padding: EdgeInsets.zero,
+                                itemCount: allHomepageTransaction.length,
+                                itemBuilder: (context, index) {
+                                  TransactionModel currentModel =
+                                      allHomepageTransaction[index];
+                                  return TransactionWidget(
+                                      transactionModel: currentModel);
                                 },
-                              );
-                            }
-                          },
-                        ))
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 35),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "April",
+                                      style: AppTextStyles.medium(
+                                          fontSize: 15,
+                                          color: AppColors.lettersAndIcons),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              ListView.builder(
+                                shrinkWrap: true,
+                                physics: const NeverScrollableScrollPhysics(),
+                                padding: EdgeInsets.zero,
+                                itemCount: allHomepageTransaction.length,
+                                itemBuilder: (context, index) {
+                                  TransactionModel currentModel =
+                                      allHomepageTransaction[index];
+                                  return TransactionWidget(
+                                      transactionModel: currentModel);
+                                },
+                              ),
+                            ],
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 20,
+                          left: size.width * 0.2,
+                          child: GestureDetector(
+                            onTap: () {
+                              mainProvider.changeSubIndex(
+                                  index: 3, pageName: "Categories");
+                            },
+                            child: Container(
+                                height: 36,
+                                width: 169,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15),
+                                  color: AppColors.caribbeanGreen,
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    "Add Expense",
+                                    style: AppTextStyles.medium(
+                                        fontSize: 15,
+                                        color: AppColors.lettersAndIcons),
+                                  ),
+                                )),
+                          ),
+                        )
                       ],
                     ),
                   ),
