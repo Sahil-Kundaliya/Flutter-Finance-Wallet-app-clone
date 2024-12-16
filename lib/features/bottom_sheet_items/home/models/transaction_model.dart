@@ -281,3 +281,104 @@ List<TransactionModel> entertainmentTransaction2 = [
       transactionAmount: "-\$19.82",
       imageColor: AppColors.vividBlue),
 ];
+
+// Travel
+List<TransactionModel> travelTransaction1 = [
+  TransactionModel(
+      transactionImage: AppImages.travelIcon,
+      transactionTitle: 'Travel deposit',
+      transactionTime: "19:56 - April 30",
+      transactionAmount: "\$217.77",
+      imageColor: AppColors.lightBlue),
+  TransactionModel(
+      transactionImage: AppImages.travelIcon,
+      transactionTitle: 'Travel deposit',
+      transactionTime: "19:56 - April 30",
+      transactionAmount: "\$217.77",
+      imageColor: AppColors.lightBlue),
+  TransactionModel(
+      transactionImage: AppImages.travelIcon,
+      transactionTitle: 'Travel deposit',
+      transactionTime: "19:56 - April 30",
+      transactionAmount: "\$217.77",
+      imageColor: AppColors.lightBlue),
+];
+List<TransactionModel> travelTransaction2 = [
+  TransactionModel(
+      transactionImage: AppImages.travelIcon,
+      transactionTitle: 'Travel deposit',
+      transactionTime: "19:56 - April 30",
+      transactionAmount: "\$217.77",
+      imageColor: AppColors.lightBlue),
+];
+
+// House
+List<TransactionModel> houseTransaction1 = [
+  TransactionModel(
+      transactionImage: AppImages.newHomeIcon,
+      transactionTitle: 'House deposit',
+      transactionTime: "19:56 - April 5",
+      transactionAmount: "\$477.77",
+      imageColor: AppColors.lightBlue),
+];
+List<TransactionModel> houseTransaction2 = [
+  TransactionModel(
+      transactionImage: AppImages.newHomeIcon,
+      transactionTitle: 'House deposit',
+      transactionTime: "20:25 - January 16",
+      transactionAmount: "\$102.74",
+      imageColor: AppColors.oceanBlue),
+  TransactionModel(
+      transactionImage: AppImages.newHomeIcon,
+      transactionTitle: 'House deposit',
+      transactionTime: "15:56 - January 02",
+      transactionAmount: "\$44.26",
+      imageColor: AppColors.lightBlue),
+];
+
+// Car
+List<TransactionModel> carTransaction1 = [
+  TransactionModel(
+      transactionImage: AppImages.carIcon,
+      transactionTitle: 'Car deposit',
+      transactionTime: "14:16 - July 5",
+      transactionAmount: "\$387.32",
+      imageColor: AppColors.lightBlue),
+];
+List<TransactionModel> carTransaction2 = [
+  TransactionModel(
+      transactionImage: AppImages.carIcon,
+      transactionTitle: 'Car deposit',
+      transactionTime: "21:45 - May 30",
+      transactionAmount: "\122.99",
+      imageColor: AppColors.lightBlue),
+  TransactionModel(
+      transactionImage: AppImages.carIcon,
+      transactionTitle: 'Car deposit',
+      transactionTime: "14:25 - May 05",
+      transactionAmount: "\85.94",
+      imageColor: AppColors.oceanBlue),
+];
+// Wedding
+List<TransactionModel> weddingTransaction1 = [
+  TransactionModel(
+      transactionImage: AppImages.weddingIcon,
+      transactionTitle: 'Wedding deposit',
+      transactionTime: "18:46 - November 15",
+      transactionAmount: "\$87.32",
+      imageColor: AppColors.lightBlue),
+];
+List<TransactionModel> weddingTransaction2 = [
+  TransactionModel(
+      transactionImage: AppImages.weddingIcon,
+      transactionTitle: 'Wedding deposit',
+      transactionTime: "21:45 - September 30",
+      transactionAmount: "\$22.02",
+      imageColor: AppColors.oceanBlue),
+  TransactionModel(
+      transactionImage: AppImages.weddingIcon,
+      transactionTitle: 'Wedding deposit',
+      transactionTime: "12:25 - September 15",
+      transactionAmount: "\$187.32",
+      imageColor: AppColors.lightBlue),
+];

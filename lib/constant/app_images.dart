@@ -22,7 +22,7 @@ class AppImages {
   // home
   static const String incomeIcon = 'assets/images/Income.png';
   static const String expenseIcon = 'assets/images/Expense.png';
-  static const String carIcon = 'assets/images/Car.png';
+  static const String carIcon = 'assets/images/car_icon.png';
   static const String incomeExpensesChart =
       'assets/images/income_expenses_chart.png';
   static const String aprilExpensesChart =
@@ -48,4 +48,9 @@ class AppImages {
   static const String foodIcon = 'assets/images/food_icon.png';
   static const String groceriesIcon = 'assets/images/groceries_icon.png';
   static const String rentIcon = 'assets/images/rent_icon.png';
+
+  // saving
+  static const String newHomeIcon = 'assets/images/new_home_icon.png';
+  static const String travelIcon = 'assets/images/travel_icon.png';
+  static const String weddingIcon = 'assets/images/wedding_icon.png';
 }

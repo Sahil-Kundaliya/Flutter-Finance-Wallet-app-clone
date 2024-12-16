@@ -1,17 +1,17 @@
+import 'package:finance_wallet_app_clone/features/bottom_sheet_items/categories/models/categories_model.dart';
+import 'package:finance_wallet_app_clone/features/bottom_sheet_items/categories/widgets/categories_item_widget.dart';
+import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/widgets/money_percentage_progressbar.dart';
+import 'package:finance_wallet_app_clone/features/main/cubits/main_cubit.dart';
+import 'package:finance_wallet_app_clone/features/main/cubits/main_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../constant/app_colors.dart';
 import '../../../../constant/app_images.dart';
 import '../../../../constant/app_text_styles.dart';
-import '../../../main/cubits/main_cubit.dart';
-import '../../../main/cubits/main_state.dart';
-import '../../home/widgets/money_percentage_progressbar.dart';
-import '../models/categories_model.dart';
-import '../widgets/categories_item_widget.dart';
 
-class CategoriesScreen extends StatelessWidget {
-  const CategoriesScreen({super.key});
+class SavingsScreen extends StatelessWidget {
+  const SavingsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +31,24 @@ class CategoriesScreen extends StatelessWidget {
                   children: [
                     Row(
                       children: [
+                        IconButton(
+                          onPressed: () {
+                            mainProvider.changeSubIndex(
+                                index: 0, pageName: "Categories");
+                          },
+                          constraints: const BoxConstraints(),
+                          // Removes default constraints
+                          padding: EdgeInsets.zero,
+                          // Removes default padding
+                          icon: const Icon(
+                            Icons.arrow_back,
+                            color: AppColors.whiteColor,
+                            size: 24,
+                          ),
+                        ),
                         Expanded(
                           child: Center(
-                            child: Text('Categories',
+                            child: Text('Savings',
                                 style: AppTextStyles.semiBold(
                                     fontSize: 20, color: AppColors.fenceGreen)),
                           ),
@@ -148,32 +163,19 @@ class CategoriesScreen extends StatelessWidget {
                                   mainAxisSpacing: 20,
                                   crossAxisCount: 3),
                           padding: const EdgeInsets.only(bottom: 10),
-                          itemCount: allCategories.length + 1,
+                          itemCount: allCategoriesSaving.length,
                           itemBuilder: (context, index) {
-                            if (index > allCategories.length - 1) {
-                              return CategoriesItemWidget(
-                                currentModel: allCategories.first,
-                                showAddMore: true,
-                                onTap: () {},
-                              );
-                            } else {
-                              CategoriesModel currentModel =
-                                  allCategories[index];
-                              return CategoriesItemWidget(
-                                currentModel: currentModel,
-                                onTap: () {
-                                  if (index == 6) {
-                                    mainProvider.changeSubIndex(
-                                        index: 4, pageName: "Categories");
-                                  } else {
-                                    mainProvider.changeSelectedCategory(
-                                        nextCategory: currentModel);
-                                    mainProvider.changeSubIndex(
-                                        index: 2, pageName: "Categories");
-                                  }
-                                },
-                              );
-                            }
+                            CategoriesModel currentModel =
+                                allCategoriesSaving[index];
+                            return CategoriesItemWidget(
+                              currentModel: currentModel,
+                              onTap: () {
+                                mainProvider.changeSelectedCategory(
+                                    nextCategory: currentModel);
+                                mainProvider.changeSubIndex(
+                                    index: 5, pageName: "Categories");
+                              },
+                            );
                           },
                         ))
                       ],

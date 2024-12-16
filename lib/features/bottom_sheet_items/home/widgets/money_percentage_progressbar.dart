@@ -3,13 +3,16 @@ import 'package:finance_wallet_app_clone/constant/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class MoneyPercentageProgressBar extends StatelessWidget {
-  final double progressAmount; // Amount for the progress (e.g., $20,000)
-  final double percentage; // Percentage for the progress (e.g., 30%)
-
   MoneyPercentageProgressBar({
     required this.progressAmount,
     required this.percentage,
+    this.firstColor,
+    this.secondColor,
   });
+
+  final double progressAmount; // Amount for the progress (e.g., $20,000)
+  final double percentage; // Percentage for the progress (e.g., 30%)
+  Color? firstColor, secondColor;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +31,10 @@ class MoneyPercentageProgressBar extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(13.5),
                 gradient: LinearGradient(
-                  colors: [AppColors.fenceGreen, AppColors.honeydew],
+                  colors: [
+                    firstColor ?? AppColors.fenceGreen,
+                    secondColor ?? AppColors.honeydew
+                  ],
                   stops: [percentage / 100, percentage / 100],
                   begin: Alignment.centerLeft,
                   end: Alignment.centerRight,

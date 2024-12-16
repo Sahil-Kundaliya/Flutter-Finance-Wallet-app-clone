@@ -5,6 +5,8 @@ import 'package:finance_wallet_app_clone/features/bottom_sheet_items/analysis/pa
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/categories/pages/add_expenses_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/categories/pages/categories_detail_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/categories/pages/categories_page.dart';
+import 'package:finance_wallet_app_clone/features/bottom_sheet_items/categories/pages/saving_detail_page.dart';
+import 'package:finance_wallet_app_clone/features/bottom_sheet_items/categories/pages/savings_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/pages/account_balance_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/pages/home_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/pages/notification_page.dart';
@@ -169,6 +171,10 @@ class MainCubit extends Cubit<MainState> {
             return const CategoriesDetailScreen();
           case 3:
             return AddExpensesScreen();
+          case 4:
+            return const SavingsScreen();
+          case 5:
+            return const SavingDetailScreen();
           default:
             return const AnalysisPage();
         }
@@ -239,6 +245,14 @@ class MainCubit extends Cubit<MainState> {
       return index == 0 ? giftsTransaction1 : giftsTransaction2;
     } else if (selectedCategories == allCategories[7]) {
       return index == 0 ? entertainmentTransaction1 : entertainmentTransaction2;
+    } else if (selectedCategories == allCategoriesSaving[0]) {
+      return index == 0 ? travelTransaction1 : travelTransaction2;
+    } else if (selectedCategories == allCategoriesSaving[1]) {
+      return index == 0 ? houseTransaction1 : houseTransaction2;
+    } else if (selectedCategories == allCategoriesSaving[2]) {
+      return index == 0 ? carTransaction1 : carTransaction2;
+    } else if (selectedCategories == allCategoriesSaving[3]) {
+      return index == 0 ? weddingTransaction1 : weddingTransaction2;
     }
     // switch (selectedCategories) {
     //   case allCategories.:

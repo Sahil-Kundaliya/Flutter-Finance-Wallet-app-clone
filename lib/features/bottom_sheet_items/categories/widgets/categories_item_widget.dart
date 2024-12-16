@@ -25,7 +25,7 @@ class CategoriesItemWidget extends StatelessWidget {
             height: 98,
             width: 105,
             decoration: BoxDecoration(
-                color: AppColors.oceanBlue,
+                color: currentModel.categoriesColor,
                 borderRadius: BorderRadius.circular(25.7)),
             child: showAddMore
                 ? const Icon(
