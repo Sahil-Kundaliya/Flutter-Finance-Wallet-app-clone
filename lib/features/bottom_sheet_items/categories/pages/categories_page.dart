@@ -154,7 +154,9 @@ class CategoriesScreen extends StatelessWidget {
                               return CategoriesItemWidget(
                                 currentModel: allCategories.first,
                                 showAddMore: true,
-                                onTap: () {},
+                                onTap: () {
+                                  showCustomDialog(context);
+                                },
                               );
                             } else {
                               CategoriesModel currentModel =
@@ -184,5 +186,95 @@ class CategoriesScreen extends StatelessWidget {
             ],
           ));
     });
+  }
+
+  void showCustomDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return Dialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Container(
+            padding: EdgeInsets.all(20),
+            decoration: BoxDecoration(
+                color: AppColors.whiteColor,
+                borderRadius: BorderRadius.circular(30)),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 18),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                spacing: 18,
+                children: [
+                  Text(
+                    "New Category",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  TextFormField(
+                    controller: TextEditingController(),
+                    style: const TextStyle(color: Colors.black), // Text color
+                    decoration: InputDecoration(
+                      contentPadding: const EdgeInsets.symmetric(
+                          vertical: 8, horizontal: 15),
+                      hintText: "Write...",
+                      hintStyle: AppTextStyles.regular(
+                          color: AppColors.lettersAndIcons.withOpacity(.45),
+                          fontSize: 16),
+                      // Hint text color
+                      filled: true,
+                      fillColor: AppColors.lightGreen,
+                      // Background color
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20.5),
+                        // Circular border
+                        borderSide: BorderSide.none, // No border
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Container(
+                      height: 45,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: AppColors.caribbeanGreen),
+                      child: Center(
+                        child: Text(
+                          'Save',
+                          style: AppTextStyles.medium(
+                              fontSize: 15, color: AppColors.lettersAndIcons),
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Container(
+                      height: 45,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: AppColors.lightGreen),
+                      child: Center(
+                        child: Text(
+                          'Cancel',
+                          style: AppTextStyles.medium(
+                              fontSize: 15, color: AppColors.cyprus),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
+    );
   }
 }
