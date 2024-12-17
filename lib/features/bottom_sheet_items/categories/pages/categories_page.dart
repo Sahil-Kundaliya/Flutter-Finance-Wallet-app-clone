@@ -197,7 +197,7 @@ class CategoriesScreen extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
           ),
           child: Container(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
                 color: AppColors.whiteColor,
                 borderRadius: BorderRadius.circular(30)),
@@ -208,7 +208,7 @@ class CategoriesScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 spacing: 18,
                 children: [
-                  Text(
+                  const Text(
                     "New Category",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),

@@ -53,4 +53,7 @@ class AppImages {
   static const String newHomeIcon = 'assets/images/new_home_icon.png';
   static const String travelIcon = 'assets/images/travel_icon.png';
   static const String weddingIcon = 'assets/images/wedding_icon.png';
+
+  //profile
+  static const String profileImage = 'assets/images/profile_image.png';
 }

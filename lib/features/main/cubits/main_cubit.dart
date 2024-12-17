@@ -11,6 +11,8 @@ import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/pages/
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/pages/home_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/pages/notification_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/pages/quickly_analysis_page.dart';
+import 'package:finance_wallet_app_clone/features/bottom_sheet_items/profile/pages/edit_profile_page.dart';
+import 'package:finance_wallet_app_clone/features/bottom_sheet_items/profile/pages/profile_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/transaction/pages/transaction_page.dart';
 import 'package:finance_wallet_app_clone/features/main/cubits/main_state.dart';
 import 'package:flutter/material.dart';
@@ -56,7 +58,9 @@ class MainCubit extends Cubit<MainState> {
   int categoriesPageSubIndex = 0;
   CategoriesModel selectedCategories = allCategories.first;
 
-  // int transactionId = 0;
+  // Profile
+  bool pushNotificationsToggled = true;
+  bool themeToggled = false;
 
   changeMainPageIndex({required int index}) {
     mainPageIndex = index;
@@ -120,6 +124,15 @@ class MainCubit extends Cubit<MainState> {
     updateState();
   }
 
+  changeToggle({required int index}) {
+    if (index == 0) {
+      pushNotificationsToggled = !pushNotificationsToggled;
+    } else {
+      themeToggled = !themeToggled;
+    }
+    updateState();
+  }
+
   Widget getMainScreenWidget() {
     switch (mainPageIndex) {
       case 0:
@@ -177,6 +190,17 @@ class MainCubit extends Cubit<MainState> {
             return const SavingDetailScreen();
           default:
             return const AnalysisPage();
+        }
+      case 4:
+        switch (categoriesPageSubIndex) {
+          case 0:
+            return const ProfileScreen();
+          case 1:
+            return const NotificationScreen();
+          case 2:
+            return EditProfileScreen();
+          default:
+            return const ProfileScreen();
         }
 
       default:

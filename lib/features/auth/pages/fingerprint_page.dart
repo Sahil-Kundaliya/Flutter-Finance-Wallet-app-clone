@@ -44,6 +44,7 @@ class FingerprintPage extends StatelessWidget {
                         topRight: Radius.circular(60)),
                     color: AppColors.honeydew),
                 child: SingleChildScrollView(
+
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25),
                     child: Column(
