@@ -102,7 +102,10 @@ class ProfileScreen extends StatelessWidget {
                                       ProfileItemWidget(
                                         itemIcon: Icons.verified_user_outlined,
                                         itemText: "Security",
-                                        onTap: () {},
+                                        onTap: () {
+                                          mainProvider.changeSubIndex(
+                                              index: 3, pageName: "Categories");
+                                        },
                                       ),
                                       ProfileItemWidget(
                                         itemIcon: Icons.settings,

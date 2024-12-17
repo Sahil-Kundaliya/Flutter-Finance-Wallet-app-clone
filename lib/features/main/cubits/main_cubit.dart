@@ -13,6 +13,7 @@ import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/pages/
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/home/pages/quickly_analysis_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/profile/pages/edit_profile_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/profile/pages/profile_page.dart';
+import 'package:finance_wallet_app_clone/features/bottom_sheet_items/profile/pages/security_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/transaction/pages/transaction_page.dart';
 import 'package:finance_wallet_app_clone/features/main/cubits/main_state.dart';
 import 'package:flutter/material.dart';
@@ -198,7 +199,9 @@ class MainCubit extends Cubit<MainState> {
           case 1:
             return const NotificationScreen();
           case 2:
-            return EditProfileScreen();
+            return const EditProfileScreen();
+          case 3:
+            return const SecurityScreen();
           default:
             return const ProfileScreen();
         }
