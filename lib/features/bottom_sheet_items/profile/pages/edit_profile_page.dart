@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../constant/app_colors.dart';
 import '../../../../constant/app_images.dart';
 import '../../../../constant/app_text_styles.dart';
+import '../widgets/custom_toggle_switch.dart';
 
 class EditProfileScreen extends StatelessWidget {
   const EditProfileScreen({super.key});
@@ -161,122 +162,25 @@ class EditProfileScreen extends StatelessWidget {
                                   Padding(
                                     padding: const EdgeInsets.only(
                                         top: 20, left: 8, right: 8),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          "Push Notifications",
-                                          style: AppTextStyles.medium(
-                                              fontSize: 15,
-                                              color: AppColors.lettersAndIcons),
-                                        ),
-                                        Center(
-                                          child: GestureDetector(
-                                            onTap: () {
-                                              mainProvider.changeToggle(
-                                                  index: 0);
-                                            },
-                                            child: AnimatedContainer(
-                                              duration: const Duration(
-                                                  milliseconds: 300),
-                                              height: 15.0,
-                                              width: 31.0,
-                                              decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(20.0),
-                                                color: mainProvider
-                                                        .pushNotificationsToggled
-                                                    ? AppColors.caribbeanGreen
-                                                    : AppColors.lightGreen,
-                                              ),
-                                              child: Stack(
-                                                alignment: Alignment.center,
-                                                children: [
-                                                  AnimatedPositioned(
-                                                    duration: const Duration(
-                                                        milliseconds: 300),
-                                                    left: mainProvider
-                                                            .pushNotificationsToggled
-                                                        ? 16.0
-                                                        : 2.0,
-                                                    child: Container(
-                                                      height: 11.0,
-                                                      width: 11.0,
-                                                      decoration:
-                                                          const BoxDecoration(
-                                                        shape: BoxShape.circle,
-                                                        color: Colors.white,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
+                                    child: CustomToggleSwitch(
+                                      onTap: () {
+                                        mainProvider.changeToggle(index: 0);
+                                      },
+                                      title: "Push Notifications",
+                                      toggleSwitch:
+                                          mainProvider.pushNotificationsToggled,
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 15, left: 8, right: 8),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          "Turn Dark Theme",
-                                          style: AppTextStyles.medium(
-                                              fontSize: 15,
-                                              color: AppColors.lettersAndIcons),
-                                        ),
-                                        Center(
-                                          child: GestureDetector(
-                                            onTap: () {
-                                              mainProvider.changeToggle(
-                                                  index: 1);
-                                            },
-                                            child: AnimatedContainer(
-                                              duration: const Duration(
-                                                  milliseconds: 300),
-                                              height: 15.0,
-                                              width: 31.0,
-                                              decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(20.0),
-                                                color: mainProvider.themeToggled
-                                                    ? AppColors.caribbeanGreen
-                                                    : AppColors.lightGreen,
-                                              ),
-                                              child: Stack(
-                                                alignment: Alignment.center,
-                                                children: [
-                                                  AnimatedPositioned(
-                                                    duration: const Duration(
-                                                        milliseconds: 300),
-                                                    left: mainProvider
-                                                            .themeToggled
-                                                        ? 16.0
-                                                        : 2.0,
-                                                    child: Container(
-                                                      height: 11.0,
-                                                      width: 11.0,
-                                                      decoration:
-                                                          const BoxDecoration(
-                                                        shape: BoxShape.circle,
-                                                        color: Colors.white,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
+                                      padding: const EdgeInsets.only(
+                                          top: 15, left: 8, right: 8),
+                                      child: CustomToggleSwitch(
+                                        onTap: () {
+                                          mainProvider.changeToggle(index: 1);
+                                        },
+                                        title: "Turn Dark Theme",
+                                        toggleSwitch: mainProvider.themeToggled,
+                                      )),
                                 ],
                               ),
                             ),
