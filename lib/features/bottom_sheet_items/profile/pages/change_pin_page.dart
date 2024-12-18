@@ -1,3 +1,4 @@
+import 'package:finance_wallet_app_clone/features/bottom_sheet_items/profile/pages/successful_page.dart';
 import 'package:finance_wallet_app_clone/features/common_widgets/custom_text_field.dart';
 import 'package:finance_wallet_app_clone/features/main/cubits/main_cubit.dart';
 import 'package:finance_wallet_app_clone/features/main/cubits/main_state.dart';
@@ -114,18 +115,25 @@ class ChangePinScreen extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(top: 55),
                         child: Center(
-                          child: Container(
-                            height: 35,
-                            width: 218,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30),
-                                color: AppColors.caribbeanGreen),
-                            child: Center(
-                              child: Text(
-                                "Change Pin",
-                                style: AppTextStyles.medium(
-                                    fontSize: 15,
-                                    color: AppColors.lettersAndIcons),
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.pop(context);
+                              Navigator.pushNamed(
+                                  context, SuccessfulScreen.successfulScreen);
+                            },
+                            child: Container(
+                              height: 35,
+                              width: 218,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                  color: AppColors.caribbeanGreen),
+                              child: Center(
+                                child: Text(
+                                  "Change Pin",
+                                  style: AppTextStyles.medium(
+                                      fontSize: 15,
+                                      color: AppColors.lettersAndIcons),
+                                ),
                               ),
                             ),
                           ),

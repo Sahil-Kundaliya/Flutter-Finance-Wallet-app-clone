@@ -62,6 +62,7 @@ class MainCubit extends Cubit<MainState> {
   // Profile
   bool pushNotificationsToggled = true;
   bool themeToggled = false;
+  String successfulPageState = "Pin Has been Changed successfully";
 
   changeMainPageIndex({required int index}) {
     mainPageIndex = index;
@@ -85,6 +86,11 @@ class MainCubit extends Cubit<MainState> {
 
   changeTransactionId({required int index}) {
     transactionId = index;
+    updateState();
+  }
+
+  changeSuccessfulPageState({required String nextStatus}) {
+    successfulPageState = nextStatus;
     updateState();
   }
 

@@ -5,8 +5,11 @@ import 'package:finance_wallet_app_clone/features/auth/pages/password_status_pag
 import 'package:finance_wallet_app_clone/features/auth/pages/security_pin_page.dart';
 import 'package:finance_wallet_app_clone/features/auth/pages/sign_in_page.dart';
 import 'package:finance_wallet_app_clone/features/auth/pages/sign_up_page.dart';
+import 'package:finance_wallet_app_clone/features/bottom_sheet_items/profile/pages/add_fingerprint_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/profile/pages/change_pin_page.dart';
+import 'package:finance_wallet_app_clone/features/bottom_sheet_items/profile/pages/jhon_fingerprint_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/profile/pages/profile_fingerprint_page.dart';
+import 'package:finance_wallet_app_clone/features/bottom_sheet_items/profile/pages/successful_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/profile/pages/terms_and_conditions_page.dart';
 import 'package:finance_wallet_app_clone/features/main/pages/main_page.dart';
 import 'package:finance_wallet_app_clone/features/splash/pages/app_lunch_page.dart';
@@ -44,5 +47,10 @@ class AppRoute {
         const ProfileFingerprintScreen(),
     TermsAndConditionsScreen.termsAndConditionsScreen: (context) =>
         const TermsAndConditionsScreen(),
+    SuccessfulScreen.successfulScreen: (context) => const SuccessfulScreen(),
+    AddFingerprintScreen.addFingerprintScreen: (context) =>
+        const AddFingerprintScreen(),
+    JhonFingerprintScreen.jhonFingerprintScreen: (context) =>
+        const JhonFingerprintScreen(),
   };
 }
