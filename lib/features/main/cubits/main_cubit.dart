@@ -63,6 +63,14 @@ class MainCubit extends Cubit<MainState> {
   // Profile
   bool pushNotificationsToggled = true;
   bool themeToggled = false;
+  bool generalNotificationToggled = true;
+  bool soundToggled = true;
+  bool soundCallToggled = true;
+  bool vibrateToggled = true;
+  bool transactionUpdateToggled = false;
+  bool expenseReminderToggled = false;
+  bool budgetNotificationsToggled = false;
+  bool lowBalanceAlertsToggled = false;
   String successfulPageState = "Pin Has been Changed successfully";
 
   changeMainPageIndex({required int index}) {
@@ -133,11 +141,39 @@ class MainCubit extends Cubit<MainState> {
   }
 
   changeToggle({required int index}) {
-    if (index == 0) {
-      pushNotificationsToggled = !pushNotificationsToggled;
-    } else {
-      themeToggled = !themeToggled;
+    switch (index) {
+      case 0:
+        pushNotificationsToggled = !pushNotificationsToggled;
+        break;
+      case 1:
+        themeToggled = !themeToggled;
+        break;
+      case 2:
+        generalNotificationToggled = !generalNotificationToggled;
+        break;
+      case 3:
+        soundToggled = !soundToggled;
+        break;
+      case 4:
+        soundCallToggled = !soundCallToggled;
+        break;
+      case 5:
+        vibrateToggled = !vibrateToggled;
+        break;
+      case 6:
+        transactionUpdateToggled = !transactionUpdateToggled;
+        break;
+      case 7:
+        expenseReminderToggled = !expenseReminderToggled;
+        break;
+      case 8:
+        budgetNotificationsToggled = !budgetNotificationsToggled;
+        break;
+      case 9:
+        lowBalanceAlertsToggled = !lowBalanceAlertsToggled;
+        break;
     }
+
     updateState();
   }
 

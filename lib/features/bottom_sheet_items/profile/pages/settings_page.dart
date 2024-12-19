@@ -1,3 +1,6 @@
+import 'package:finance_wallet_app_clone/features/bottom_sheet_items/profile/pages/delete_account_page.dart';
+import 'package:finance_wallet_app_clone/features/bottom_sheet_items/profile/pages/notification_settings_page.dart';
+import 'package:finance_wallet_app_clone/features/bottom_sheet_items/profile/pages/password_settings_page.dart';
 import 'package:finance_wallet_app_clone/features/main/cubits/main_cubit.dart';
 import 'package:finance_wallet_app_clone/features/main/cubits/main_state.dart';
 import 'package:flutter/material.dart';
@@ -78,7 +81,12 @@ class SettingsScreen extends StatelessWidget {
                           height: 55,
                         ),
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.pushNamed(
+                                context,
+                                NotificationSettingsScreen
+                                    .notificationSettingsScreen);
+                          },
                           behavior: HitTestBehavior.opaque,
                           child: Padding(
                             padding: const EdgeInsets.symmetric(vertical: 10),
@@ -110,7 +118,10 @@ class SettingsScreen extends StatelessWidget {
                           ),
                         ),
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.pushNamed(context,
+                                PasswordSettingsScreen.passwordSettingsScreen);
+                          },
                           behavior: HitTestBehavior.opaque,
                           child: Padding(
                             padding: const EdgeInsets.symmetric(vertical: 10),
@@ -141,7 +152,10 @@ class SettingsScreen extends StatelessWidget {
                           ),
                         ),
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.pushNamed(context,
+                                DeleteAccountScreen.deleteAccountScreen);
+                          },
                           behavior: HitTestBehavior.opaque,
                           child: Padding(
                             padding: const EdgeInsets.symmetric(vertical: 10),

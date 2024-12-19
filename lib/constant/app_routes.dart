@@ -8,6 +8,8 @@ import 'package:finance_wallet_app_clone/features/auth/pages/sign_up_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/profile/pages/add_fingerprint_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/profile/pages/change_pin_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/profile/pages/jhon_fingerprint_page.dart';
+import 'package:finance_wallet_app_clone/features/bottom_sheet_items/profile/pages/notification_settings_page.dart';
+import 'package:finance_wallet_app_clone/features/bottom_sheet_items/profile/pages/password_settings_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/profile/pages/profile_fingerprint_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/profile/pages/successful_page.dart';
 import 'package:finance_wallet_app_clone/features/bottom_sheet_items/profile/pages/terms_and_conditions_page.dart';
@@ -16,6 +18,8 @@ import 'package:finance_wallet_app_clone/features/splash/pages/app_lunch_page.da
 import 'package:finance_wallet_app_clone/features/splash/pages/on_boarding_page.dart';
 import 'package:finance_wallet_app_clone/features/splash/pages/splash_page.dart';
 import 'package:flutter/material.dart';
+
+import '../features/bottom_sheet_items/profile/pages/delete_account_page.dart';
 
 class AppRoute {
   static final AppRoute _appRoute = AppRoute();
@@ -52,5 +56,11 @@ class AppRoute {
         const AddFingerprintScreen(),
     JhonFingerprintScreen.jhonFingerprintScreen: (context) =>
         const JhonFingerprintScreen(),
+    NotificationSettingsScreen.notificationSettingsScreen: (context) =>
+        const NotificationSettingsScreen(),
+    PasswordSettingsScreen.passwordSettingsScreen: (context) =>
+        const PasswordSettingsScreen(),
+    DeleteAccountScreen.deleteAccountScreen: (context) =>
+        const DeleteAccountScreen(),
   };
 }
