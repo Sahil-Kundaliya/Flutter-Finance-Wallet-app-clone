@@ -118,7 +118,10 @@ class ProfileScreen extends StatelessWidget {
                                       ProfileItemWidget(
                                         itemIcon: Icons.support_agent_sharp,
                                         itemText: "Help",
-                                        onTap: () {},
+                                        onTap: () {
+                                          mainProvider.changeSubIndex(
+                                              index: 5, pageName: "Categories");
+                                        },
                                       ),
                                       ProfileItemWidget(
                                         itemIcon: Icons.login_outlined,
