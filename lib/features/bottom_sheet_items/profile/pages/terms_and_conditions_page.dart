@@ -23,42 +23,44 @@ class TermsAndConditionsScreen extends StatelessWidget {
           color: AppColors.caribbeanGreen,
           child: Column(
             children: [
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20),
-                child: Row(
-                  children: [
-                    IconButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      constraints: const BoxConstraints(),
-                      // Removes default constraints
-                      padding: EdgeInsets.zero,
-                      // Removes default padding
-                      icon: const Icon(
-                        Icons.arrow_back,
-                        color: AppColors.whiteColor,
-                        size: 24,
+              SafeArea(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 20.0, horizontal: 20),
+                  child: Row(
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        constraints: const BoxConstraints(),
+                        // Removes default constraints
+                        padding: EdgeInsets.zero,
+                        // Removes default padding
+                        icon: const Icon(
+                          Icons.arrow_back,
+                          color: AppColors.whiteColor,
+                          size: 24,
+                        ),
                       ),
-                    ),
-                    Expanded(
-                      child: Center(
-                        child: Text('Terms And Conditions',
-                            style: AppTextStyles.semiBold(
-                                fontSize: 20, color: AppColors.fenceGreen)),
+                      Expanded(
+                        child: Center(
+                          child: Text('Terms And Conditions',
+                              style: AppTextStyles.semiBold(
+                                  fontSize: 20, color: AppColors.fenceGreen)),
+                        ),
                       ),
-                    ),
-                    GestureDetector(
-                      onTap: () => mainProvider.changeSubIndex(
-                          index: 1, pageName: "Categories"),
-                      child: CircleAvatar(
-                          radius: 15,
-                          backgroundColor: AppColors.lightGreen,
-                          child:
-                              const Icon(Icons.notifications_none, size: 20)),
-                    )
-                  ],
+                      GestureDetector(
+                        onTap: () => mainProvider.changeSubIndex(
+                            index: 1, pageName: "Categories"),
+                        child: CircleAvatar(
+                            radius: 15,
+                            backgroundColor: AppColors.lightGreen,
+                            child:
+                                const Icon(Icons.notifications_none, size: 20)),
+                      )
+                    ],
+                  ),
                 ),
               ),
               Expanded(
