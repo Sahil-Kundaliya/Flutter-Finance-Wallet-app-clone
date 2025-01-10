@@ -56,8 +56,8 @@ This project provides a scalable code structure and reusable widgets for ease of
 - Modular architecture for easy feature addition or refactoring.
 - Fully responsive UI compatible with both Android and iOS.
 
-![Project Overview 1](path/to/project_overview_1.png)
-![Project Overview 2](path/to/project_overview_2.png)
+![Project Overview 1](assets/images/project_overview_1.png)
+![Project Overview 2](assets/images/project_overview_2.png)
 
 ## Getting Started
 
