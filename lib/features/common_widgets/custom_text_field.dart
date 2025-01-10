@@ -16,6 +16,7 @@ class CustomTextField extends StatelessWidget {
     this.iconColor2,
     this.icons1Click,
     this.hideText = false,
+    this.borderColor,
   });
 
   TextEditingController textEditingController;
@@ -25,6 +26,7 @@ class CustomTextField extends StatelessWidget {
   Color? iconColor1, iconColor2;
   VoidCallback? icons1Click;
   bool? hideText;
+  Color? borderColor;
 
   @override
   Widget build(BuildContext context) {
@@ -59,11 +61,28 @@ class CustomTextField extends StatelessWidget {
                   filled: true,
                   fillColor: AppColors.lightGreen,
                   // Background color
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20.5),
+                    // Circular border
+                    borderSide: BorderSide(
+                      color: borderColor ??
+                          AppColors.transparentColor, // Border color
+                    ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20.5),
+                    // Circular border
+                    borderSide: BorderSide(
+                      color: borderColor ?? AppColors.transparentColor,
+                      // Border color
+                    ),
+                  ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20.5),
                     // Circular border
-                    borderSide: BorderSide.none, // No border
+                    borderSide: BorderSide.none,
                   ),
+
                   suffixIcon: icon1 != null && icon2 != null
                       ? GestureDetector(
                           onTap: icons1Click,

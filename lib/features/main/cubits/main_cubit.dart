@@ -73,6 +73,7 @@ class MainCubit extends Cubit<MainState> {
   bool budgetNotificationsToggled = false;
   bool lowBalanceAlertsToggled = false;
   String successfulPageState = "Pin Has been Changed successfully";
+  int helpCenterIndex = 0;
 
   changeMainPageIndex({required int index}) {
     mainPageIndex = index;
@@ -138,6 +139,11 @@ class MainCubit extends Cubit<MainState> {
 
   changeRadioValue({required int radioValue}) {
     selectedRadio = radioValue;
+    updateState();
+  }
+
+  changeHelpCenterIndex({required int helpIndex}) {
+    helpCenterIndex = helpIndex;
     updateState();
   }
 
